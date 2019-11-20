@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  M2
+
+  Created by Petrov Anton on 11/20/19.
+  Copyright © 2019 APM. All rights reserved.
+*/
+
+"cost_per_square_meter" = "Стоимость 1-го м²";
+"apartment_area" = "Прощадь квартиры";
+"apartment_cost" = "Стоимость квартиры";
+
+"loan_terms" = "Срок кредитования";
+"credit_amount" = "Сумма кредита";
+"interest_rate" = "Процентная ставка";
+
+"one_time_commission" = "Единоразовая комиссия";
+"monthly_commission" = "Ежемесячная комиссия";
+
+"month" = "Месяц";
+"loan_debt" = "Остаток долга";
+"loan_repayment" = "Погашение кредита";
+"loan_interest" = "Проценты по кредиту";
+"commission" = "Комиссия";
+"payout_per_month" = "Месячный платеж";
+
+"annuity" = "Аннуитет";
+"standard" = "Стандарт";

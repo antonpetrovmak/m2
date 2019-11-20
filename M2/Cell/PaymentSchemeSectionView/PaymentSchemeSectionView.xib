@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="PaymentSchemeSectionView" id="zee-dY-j6F" customClass="PaymentSchemeSectionView" customModule="M2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="571" height="61"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4S2-vy-0Nd">
+                    <rect key="frame" x="0.0" y="0.0" width="571" height="61"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EtO-4t-lv3">
+                            <rect key="frame" x="0.0" y="0.0" width="571" height="1"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="nWw-Ij-XL7"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="18x-kg-XKG">
+                            <rect key="frame" x="0.0" y="60" width="571" height="1"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="qS4-hd-yT8"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="EtO-4t-lv3" firstAttribute="leading" secondItem="4S2-vy-0Nd" secondAttribute="leading" id="5hk-Ag-Xa4"/>
+                        <constraint firstItem="EtO-4t-lv3" firstAttribute="top" secondItem="4S2-vy-0Nd" secondAttribute="top" id="M5c-St-wmi"/>
+                        <constraint firstItem="18x-kg-XKG" firstAttribute="leading" secondItem="4S2-vy-0Nd" secondAttribute="leading" id="Met-Xh-ewx"/>
+                        <constraint firstAttribute="trailing" secondItem="18x-kg-XKG" secondAttribute="trailing" id="qKE-On-t7u"/>
+                        <constraint firstAttribute="bottom" secondItem="18x-kg-XKG" secondAttribute="bottom" id="rYn-d1-4Ym"/>
+                        <constraint firstAttribute="trailing" secondItem="EtO-4t-lv3" secondAttribute="trailing" id="sXp-kZ-Zs6"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joQ-5Z-Hob">
+                    <rect key="frame" x="0.0" y="0.0" width="571" height="61"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0O-Ou-Ii4">
+                            <rect key="frame" x="5" y="0.0" width="112" height="61"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aS-gJ-ebv">
+                            <rect key="frame" x="117" y="0.0" width="112.5" height="61"/>
+                            <string key="text">Остаток 
+долга</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieB-d6-lXf" userLabel="Погашение  кредита">
+                            <rect key="frame" x="229.5" y="0.0" width="112" height="61"/>
+                            <string key="text">Погашение 
+кредита</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewt-pk-HtV">
+                            <rect key="frame" x="341.5" y="0.0" width="112.5" height="61"/>
+                            <string key="text">Проценты 
+по кредиту</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AL-rT-MBc">
+                            <rect key="frame" x="454" y="0.0" width="112" height="61"/>
+                            <string key="text">Месячный 
+платеж</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <edgeInsets key="layoutMargins" top="0.0" left="5" bottom="0.0" right="5"/>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="4S2-vy-0Nd" firstAttribute="top" secondItem="zee-dY-j6F" secondAttribute="top" id="4rt-Ke-UaM"/>
+                <constraint firstItem="joQ-5Z-Hob" firstAttribute="top" secondItem="zee-dY-j6F" secondAttribute="top" id="AQz-J6-Nwo"/>
+                <constraint firstItem="joQ-5Z-Hob" firstAttribute="leading" secondItem="zee-dY-j6F" secondAttribute="leading" id="CWW-Sd-OiE"/>
+                <constraint firstAttribute="trailing" secondItem="joQ-5Z-Hob" secondAttribute="trailing" id="VkT-0c-VKX"/>
+                <constraint firstAttribute="bottom" secondItem="joQ-5Z-Hob" secondAttribute="bottom" id="aUf-jd-24H"/>
+                <constraint firstItem="4S2-vy-0Nd" firstAttribute="leading" secondItem="zee-dY-j6F" secondAttribute="leading" id="bbp-Y2-0l7"/>
+                <constraint firstAttribute="trailing" secondItem="4S2-vy-0Nd" secondAttribute="trailing" id="n6F-z8-VWt"/>
+                <constraint firstAttribute="bottom" secondItem="4S2-vy-0Nd" secondAttribute="bottom" id="uge-5t-I4E"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="loanDebtLabel" destination="2aS-gJ-ebv" id="hk7-Vf-dMV"/>
+                <outlet property="loanInterestLabel" destination="Ewt-pk-HtV" id="4Cb-3E-7NG"/>
+                <outlet property="loanRepaymentLabel" destination="ieB-d6-lXf" id="77w-lJ-PRR"/>
+                <outlet property="monthLabel" destination="F0O-Ou-Ii4" id="cQ8-Qc-KRY"/>
+                <outlet property="payoutPerMonthLabel" destination="7AL-rT-MBc" id="hHC-9b-aPE"/>
+            </connections>
+            <point key="canvasLocation" x="158.69565217391306" y="-467.07589285714283"/>
+        </view>
+    </objects>
+</document>

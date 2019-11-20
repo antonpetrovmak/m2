@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  M2
+
+  Created by Petrov Anton on 11/20/19.
+  Copyright © 2019 APM. All rights reserved.
+*/
+    
+"cost_per_square_meter" = "Cost of 1 m²";
+"apartment_area" = "Apartment`s area";
+"apartment_cost" = "Apartment`s cost";
+
+"loan_terms" = "Loan terms";
+"credit_amount" = "Credit amount";
+"interest_rate" = "Interest rate";
+
+"one_time_commission" = "One-time commission";
+"monthly_commission" = "Monthly commission";
+
+"month" = "Month";
+"loan_debt" = "Loan debt";
+"loan_repayment" = "Loan repayment";
+"loan_interest" = "Loan interest";
+"commission" = "Commission";
+"payout_per_month" = "Payout per month";
+
+"annuity" = "Annuity";
+"standard" = "Standard";
