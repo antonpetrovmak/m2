@@ -48,7 +48,7 @@ class CalculatorHeaderView: UIView {
     
     private var initialFee: SkyFloatingLabelTextField!  = {
         let field = SkyFloatingLabelTextField()
-        field.placeholder = "credit_amount".localized
+        field.placeholder = "initial_fee".localized
         field.text = "300 000"
         field.setDefaultTheme()
         return field
@@ -56,7 +56,7 @@ class CalculatorHeaderView: UIView {
     
     private var initialFeePercent: SkyFloatingLabelTextField!  = {
         let field = SkyFloatingLabelTextField()
-        field.placeholder = "credit_amount".localized + "(%)"
+        field.placeholder = "initial_fee".localized + "(%)"
         field.text = "30%"
         field.titleLabel.textAlignment = .right
         field.textAlignment = .right

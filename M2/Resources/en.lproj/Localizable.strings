@@ -6,13 +6,15 @@
   Copyright © 2019 APM. All rights reserved.
 */
     
-"cost_per_square_meter" = "Cost of 1 m²";
-"apartment_area" = "Apartment`s area";
+"title_cost_per_square_meter" = "Cost of 1 m²";
+"title_apartment_area" = "Apartment`s area";
 "apartment_cost" = "Apartment`s cost";
 
-"loan_terms" = "Loan terms";
+"title_initial_fee" = " Initial fee";
+
+"title_loan_terms" = "Loan terms";
 "credit_amount" = "Credit amount";
-"interest_rate" = "Interest rate";
+"title_interest_rate" = "Interest rate";
 
 "one_time_commission" = "One-time commission";
 "monthly_commission" = "Monthly commission";
@@ -26,3 +28,9 @@
 
 "annuity" = "Annuity";
 "standard" = "Standard";
+
+"square_meter" = "m²";
+"short_month" = "m";
+"yaer_1" = "year";
+"yaers_2" = "years";
+"yaers_3" = "years";

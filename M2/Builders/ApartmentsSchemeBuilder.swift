@@ -8,6 +8,17 @@
 
 import Foundation
 
+struct Limitations {
+    typealias Limit = (min: Double, max: Double)
+    
+    var apartmentArea          = Limit(1, 300)
+    var costOfOneQquareMeter   = Limit(100, 1_000_000)
+    var initialFee             = Limit(0, 1_000_000)
+    var initialFeePercent      = Limit(0, 100)
+    var creditPercent          = Limit(0, 0.5)
+    var creditTerm             = Limit(0, 120)
+}
+
 public class ApartmentsSchemeBuilder: CreditDataStoreProtocol {
     
     private(set) var currency: CurrencyProtocol = Currency()
@@ -25,8 +36,18 @@ public class ApartmentsSchemeBuilder: CreditDataStoreProtocol {
     
     // MARK: - Functions
     
+    func setApartmentArea(_ area: Double) {
+        apartmentArea = min(area, limitations.apartmentArea.max)
+        setInitialFee(initialFee)
+    }
+    
+    func setCostOfOneQquareMeter(_ cost: Double) {
+        costOfOneQquareMeter = cost
+        setInitialFee(initialFee)
+    }
+    
     func setInitialFee(_ initialFee: Double) {
-        self.initialFee = initialFee
+        self.initialFee = min(initialFee, limitations.initialFee.max)
         self.initialFeePercent = initialFee == 0 ? 0 : (initialFee / apartmentCost)
     }
     
@@ -39,28 +60,48 @@ public class ApartmentsSchemeBuilder: CreditDataStoreProtocol {
         self.currency = currency
     }
     
-    func setApartmentArea(_ area: Double) {
-        apartmentArea = area
-    }
-    
     func setCreditType(_ creditType: CreditType) {
         self.creditType = creditType
     }
 }
+
+// MARK: - Calculable values
 
 extension ApartmentsSchemeBuilder {
     var creditBody: Double {
         return apartmentCost - initialFee
     }
     
-    var apartmentCost: Double {
+    private var apartmentCost: Double {
         return apartmentArea * costOfOneQquareMeter
     }
     
-    var payments: [OnePaymentModel] {
+    private var payments: [OnePaymentModel] {
         return creditType.method.calculate(self)
     }
     
-    func annuity(payments: inout [OnePaymentModel], date: Date, loanDebt: Double, loanRepayment: Double, percentPerMonth: Double) {
+    private var limitations: Limitations {
+        var limits = Limitations()
+        limits.initialFee.max = apartmentCost
+        return limits
+    }
+}
+
+// MARK: - Builder
+
+extension ApartmentsSchemeBuilder {
+    func build() -> ApartmentsScheme {
+        let model = ApartmentsScheme(apartmentArea: apartmentArea,
+                                     costOfOneQquareMeter: costOfOneQquareMeter,
+                                     apartmentCost: apartmentArea,
+                                     initialFee: initialFee,
+                                     initialFeePercent: initialFeePercent,
+                                     creditPercent: creditPercent,
+                                     creditTerm: creditTerm,
+                                     creditType: creditType,
+                                     creditBody: creditBody,
+                                     payments: payments,
+                                     limitations: limitations)
+        return model
     }
 }

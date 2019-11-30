@@ -11,7 +11,7 @@ import Foundation
 struct StandardMethod: CreditMethodProtocol {
     func calculate(_ dataStore: CreditDataStoreProtocol) -> [OnePaymentModel] {
         var payments = [OnePaymentModel]()
-        if dataStore.creditTerm > 0 {
+        if dataStore.creditTerm > 0 && dataStore.creditBody > 0 {
             let loanRepaymentPerMonth = dataStore.creditBody / Double(dataStore.creditTerm)
             standard(payments: &payments,
                      date: Date(),

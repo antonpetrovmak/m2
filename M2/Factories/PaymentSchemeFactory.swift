@@ -22,20 +22,3 @@ struct PaymentSchemeFactory {
             paymentsPerMonth: model.paymentPerMonth.currency )
     }
 }
-
-private extension Double {
-    private var currencyFormatter: NumberFormatter {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencySymbol = ""
-        formatter.decimalSeparator = " "
-        formatter.maximumFractionDigits = 0
-        formatter.minimumFractionDigits = 0
-        formatter.negativeFormat = "-¤#,##0.00"
-        return formatter
-    }
-    
-    var currency: String {
-        return currencyFormatter.string(from: NSNumber(value: self))!
-    }
-}

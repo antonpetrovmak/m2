@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="SliderTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SliderTableViewCell" rowHeight="144" id="KGk-i7-Jjw" customClass="SliderTableViewCell" customModule="M2" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="569" height="144"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="569" height="144"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Площадь квартиры, м2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rM-VJ-coa">
+                        <rect key="frame" x="16" y="0.0" width="186.5" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="8QM-fA-ES0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" name="Gray_A6AAB4"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kgp-Bp-Dla" customClass="CustomSlider" customModule="M2" customModuleProvider="target">
+                        <rect key="frame" x="14" y="82" width="541" height="7"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="6" id="xxR-p7-qoF"/>
+                        </constraints>
+                        <color key="minimumTrackTintColor" name="Purple2"/>
+                        <color key="maximumTrackTintColor" name="Blue_DCE6F0"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="trackHeight">
+                                <real key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </slider>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9t-1y-rb9">
+                        <rect key="frame" x="16" y="30" width="537" height="42"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pL0-VI-MFW">
+                                <rect key="frame" x="0.0" y="0.0" width="68" height="42"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" name="Gray_BDBDBD"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="62.2 м2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMf-ne-1Ca">
+                                <rect key="frame" x="424" y="0.0" width="113" height="42"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                                <color key="textColor" name="Black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="sMf-ne-1Ca" secondAttribute="bottom" id="NaI-ad-MdB"/>
+                            <constraint firstItem="sMf-ne-1Ca" firstAttribute="top" secondItem="p9t-1y-rb9" secondAttribute="top" id="SBZ-hv-3R1"/>
+                            <constraint firstItem="pL0-VI-MFW" firstAttribute="leading" secondItem="p9t-1y-rb9" secondAttribute="leading" id="WKG-g0-F4a"/>
+                            <constraint firstAttribute="bottom" secondItem="pL0-VI-MFW" secondAttribute="bottom" id="Zj1-XB-sJA"/>
+                            <constraint firstAttribute="trailing" secondItem="sMf-ne-1Ca" secondAttribute="trailing" id="fPL-0l-7d6"/>
+                            <constraint firstItem="pL0-VI-MFW" firstAttribute="top" secondItem="p9t-1y-rb9" secondAttribute="top" id="gG3-IK-9Wb"/>
+                            <constraint firstAttribute="height" constant="42" id="tuG-eE-29l"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Kgp-Bp-Dla" secondAttribute="bottom" constant="25" id="6vl-7P-IYX"/>
+                    <constraint firstItem="Kgp-Bp-Dla" firstAttribute="top" secondItem="p9t-1y-rb9" secondAttribute="bottom" constant="10" id="EVM-gy-adl"/>
+                    <constraint firstAttribute="trailing" secondItem="p9t-1y-rb9" secondAttribute="trailing" constant="16" id="EaU-7V-wQk"/>
+                    <constraint firstItem="Kgp-Bp-Dla" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Gf8-Dp-JhT"/>
+                    <constraint firstItem="5rM-VJ-coa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ldy-Vd-bTJ"/>
+                    <constraint firstAttribute="trailing" secondItem="Kgp-Bp-Dla" secondAttribute="trailing" constant="16" id="Uvv-UJ-hfR"/>
+                    <constraint firstItem="p9t-1y-rb9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Yg1-u2-FSX"/>
+                    <constraint firstItem="5rM-VJ-coa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="d8l-L9-FNj"/>
+                    <constraint firstItem="p9t-1y-rb9" firstAttribute="top" secondItem="5rM-VJ-coa" secondAttribute="bottom" constant="5" id="dZp-gJ-yz4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="leftLabel" destination="pL0-VI-MFW" id="CE4-Vc-rj8"/>
+                <outlet property="rightLabel" destination="sMf-ne-1Ca" id="uhi-rA-YVQ"/>
+                <outlet property="slider" destination="Kgp-Bp-Dla" id="FO7-ae-H87"/>
+                <outlet property="titleLabel" destination="5rM-VJ-coa" id="5av-Zd-vrx"/>
+            </connections>
+            <point key="canvasLocation" x="154.34782608695653" y="117.1875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Blue_DCE6F0">
+            <color red="0.86274509803921573" green="0.90196078431372551" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Gray_A6AAB4">
+            <color red="0.65098039215686276" green="0.66666666666666663" blue="0.70588235294117652" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Gray_BDBDBD">
+            <color red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Purple2">
+            <color red="0.38039215686274508" green="0.24313725490196078" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,22 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="121212122" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZn-xm-5Ga">
-                                <rect key="frame" x="186" y="417" width="80" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8Pg-n1-bsz">
+                                <rect key="frame" x="0.0" y="406.5" width="414" height="45"/>
+                                <color key="backgroundColor" name="White"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JKd-eC-bxO"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                <segments>
+                                    <segment title="First" width="206.5"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" name="Purple1"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ovh-F6-oeA" firstAttribute="trailing" secondItem="8Pg-n1-bsz" secondAttribute="trailing" id="CHf-PK-qf9"/>
+                            <constraint firstItem="8Pg-n1-bsz" firstAttribute="leading" secondItem="Ovh-F6-oeA" secondAttribute="leading" id="LtS-oh-ISV"/>
+                            <constraint firstItem="8Pg-n1-bsz" firstAttribute="centerX" secondItem="Ovh-F6-oeA" secondAttribute="centerX" id="c6s-5K-LTb"/>
+                            <constraint firstItem="8Pg-n1-bsz" firstAttribute="centerY" secondItem="Ovh-F6-oeA" secondAttribute="centerY" id="nCb-qe-sjb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ovh-F6-oeA"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" image="pencil.and.ellipsis.rectangle" catalog="system" id="C9n-Cf-V4R"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Pl-34-3m3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-35" y="48"/>
+            <point key="canvasLocation" x="-36.231884057971016" y="47.544642857142854"/>
         </scene>
         <!--1-->
         <scene sceneID="wqL-jg-N86">
@@ -42,7 +56,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wmw-J6-dJe">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -86,11 +100,10 @@
         <!--Item 1-->
         <scene sceneID="Yiq-Gp-d1M">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IsS-zY-jRg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="IsS-zY-jRg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item 1" image="pencil.circle" catalog="system" id="Qau-6g-ZA2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="n6z-Qa-baI">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -106,5 +119,11 @@
     <resources>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="pencil.circle" catalog="system" width="64" height="60"/>
+        <namedColor name="Purple1">
+            <color red="0.63137254901960782" green="0.32941176470588235" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

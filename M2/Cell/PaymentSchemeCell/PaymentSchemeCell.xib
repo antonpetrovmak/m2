@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,7 +25,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROf-3y-vRS">
                                         <rect key="frame" x="15" y="12" width="384" height="1"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="Mint4"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="N53-ry-bgd"/>
                                         </constraints>
@@ -36,7 +37,7 @@
                                             <constraint firstAttribute="width" constant="50" id="Yvo-Rm-3lQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" name="Mint4"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -111,4 +112,9 @@
             <point key="canvasLocation" x="137.68115942028987" y="60.602678571428569"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="Mint4">
+            <color red="0.11372549019607843" green="0.46274509803921571" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

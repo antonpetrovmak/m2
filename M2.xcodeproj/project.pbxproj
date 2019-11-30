@@ -19,6 +19,21 @@
 		2B89E028238469340079FE14 /* CreditMethodProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89E027238469340079FE14 /* CreditMethodProtocol.swift */; };
 		2B89E02B23852B440079FE14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B89E02D23852B440079FE14 /* Localizable.strings */; };
 		2B89E03023852CC20079FE14 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89E02F23852CC20079FE14 /* StringExtension.swift */; };
+		2B89E0322385A50F0079FE14 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89E0312385A50F0079FE14 /* UIColorExtension.swift */; };
+		2B8D4BCC23916A97006E9D7C /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D4BCA23916A97006E9D7C /* SliderTableViewCell.swift */; };
+		2B8D4BCD23916A97006E9D7C /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D4BCB23916A97006E9D7C /* SliderTableViewCell.xib */; };
+		2BB2A0682391A3740066AC5C /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0672391A3740066AC5C /* CustomSlider.swift */; };
+		2BB2A06A2391A39E0066AC5C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0692391A39E0066AC5C /* UIViewExtension.swift */; };
+		2BB2A06C2391AEBC0066AC5C /* FormatterValueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A06B2391AEBC0066AC5C /* FormatterValueProtocol.swift */; };
+		2BB2A06E2391AED00066AC5C /* SliderTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A06D2391AED00066AC5C /* SliderTableViewCellViewModel.swift */; };
+		2BB2A0702391AF000066AC5C /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A06F2391AF000066AC5C /* CalculatorViewModel.swift */; };
+		2BB2A0722391B06D0066AC5C /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0712391B06D0066AC5C /* NSObjectExtension.swift */; };
+		2BB2A0742391B1DB0066AC5C /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0732391B1DB0066AC5C /* UITableViewExtension.swift */; };
+		2BB2A0762391C8590066AC5C /* StringProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0752391C8590066AC5C /* StringProtocolExtension.swift */; };
+		2BB2A0782391C9140066AC5C /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0772391C9140066AC5C /* UIFontExtension.swift */; };
+		2BB2A07A2391C97E0066AC5C /* UIFont+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0792391C97E0066AC5C /* UIFont+Resize.swift */; };
+		2BB2A07C2391D4D10066AC5C /* SliderViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A07B2391D4D10066AC5C /* SliderViewModelFactory.swift */; };
+		2BB2A07E2391D61E0066AC5C /* CurrencyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A07D2391D61E0066AC5C /* CurrencyExtension.swift */; };
 		2BB9BF8023816B4400C5B4D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9BF7F23816B4400C5B4D4 /* AppDelegate.swift */; };
 		2BB9BF8723816B4400C5B4D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9BF8523816B4400C5B4D4 /* Main.storyboard */; };
 		2BB9BF8923816B4500C5B4D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9BF8823816B4500C5B4D4 /* Assets.xcassets */; };
@@ -67,6 +82,21 @@
 		2B89E02C23852B440079FE14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2B89E02E23852B9F0079FE14 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2B89E02F23852CC20079FE14 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		2B89E0312385A50F0079FE14 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		2B8D4BCA23916A97006E9D7C /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
+		2B8D4BCB23916A97006E9D7C /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
+		2BB2A0672391A3740066AC5C /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		2BB2A0692391A39E0066AC5C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		2BB2A06B2391AEBC0066AC5C /* FormatterValueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterValueProtocol.swift; sourceTree = "<group>"; };
+		2BB2A06D2391AED00066AC5C /* SliderTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		2BB2A06F2391AF000066AC5C /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		2BB2A0712391B06D0066AC5C /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		2BB2A0732391B1DB0066AC5C /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		2BB2A0752391C8590066AC5C /* StringProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExtension.swift; sourceTree = "<group>"; };
+		2BB2A0772391C9140066AC5C /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		2BB2A0792391C97E0066AC5C /* UIFont+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Resize.swift"; sourceTree = "<group>"; };
+		2BB2A07B2391D4D10066AC5C /* SliderViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewModelFactory.swift; sourceTree = "<group>"; };
+		2BB2A07D2391D61E0066AC5C /* CurrencyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExtension.swift; sourceTree = "<group>"; };
 		2BB9BF7C23816B4400C5B4D4 /* M2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB9BF7F23816B4400C5B4D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BB9BF8623816B4400C5B4D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +133,7 @@
 		2B0E7E832381A85E0022E407 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				2B8D4BCE23916A9E006E9D7C /* SliderTableViewCell */,
 				2BE8F016238458D6005A3774 /* PaymentSchemeSectionView */,
 				2BE8F015238458C7005A3774 /* PaymentSchemeCell */,
 			);
@@ -126,6 +157,14 @@
 			children = (
 				2B596D062383DB3200C2A435 /* DateExtension.swift */,
 				2B89E02F23852CC20079FE14 /* StringExtension.swift */,
+				2B89E0312385A50F0079FE14 /* UIColorExtension.swift */,
+				2BB2A0692391A39E0066AC5C /* UIViewExtension.swift */,
+				2BB2A0712391B06D0066AC5C /* NSObjectExtension.swift */,
+				2BB2A0732391B1DB0066AC5C /* UITableViewExtension.swift */,
+				2BB2A0752391C8590066AC5C /* StringProtocolExtension.swift */,
+				2BB2A0772391C9140066AC5C /* UIFontExtension.swift */,
+				2BB2A0792391C97E0066AC5C /* UIFont+Resize.swift */,
+				2BB2A07D2391D61E0066AC5C /* CurrencyExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -138,6 +177,17 @@
 				2B89E025238469160079FE14 /* StandardMethod.swift */,
 			);
 			path = CreditMethods;
+			sourceTree = "<group>";
+		};
+		2B8D4BCE23916A9E006E9D7C /* SliderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D4BCA23916A97006E9D7C /* SliderTableViewCell.swift */,
+				2B8D4BCB23916A97006E9D7C /* SliderTableViewCell.xib */,
+				2BB2A0672391A3740066AC5C /* CustomSlider.swift */,
+				2BB2A06D2391AED00066AC5C /* SliderTableViewCellViewModel.swift */,
+			);
+			path = SliderTableViewCell;
 			sourceTree = "<group>";
 		};
 		2BB9BF7323816B4400C5B4D4 = {
@@ -218,6 +268,8 @@
 			isa = PBXGroup;
 			children = (
 				2BE8F01123845858005A3774 /* PaymentSchemeFactory.swift */,
+				2BB2A06B2391AEBC0066AC5C /* FormatterValueProtocol.swift */,
+				2BB2A07B2391D4D10066AC5C /* SliderViewModelFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -235,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				2BB9BFA92381737E00C5B4D4 /* CalculatorViewController.swift */,
+				2BB2A06F2391AF000066AC5C /* CalculatorViewModel.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -323,6 +376,7 @@
 				2B89E02B23852B440079FE14 /* Localizable.strings in Resources */,
 				2BB9BF8923816B4500C5B4D4 /* Assets.xcassets in Resources */,
 				2BB9BF8723816B4400C5B4D4 /* Main.storyboard in Resources */,
+				2B8D4BCD23916A97006E9D7C /* SliderTableViewCell.xib in Resources */,
 				2B0E7E872381A90E0022E407 /* PaymentSchemeSectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,18 +412,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BE8F018238458EB005A3774 /* Currency.swift in Sources */,
+				2BB2A0682391A3740066AC5C /* CustomSlider.swift in Sources */,
+				2BB2A06A2391A39E0066AC5C /* UIViewExtension.swift in Sources */,
+				2BB2A06E2391AED00066AC5C /* SliderTableViewCellViewModel.swift in Sources */,
+				2BB2A0702391AF000066AC5C /* CalculatorViewModel.swift in Sources */,
 				2B89E028238469340079FE14 /* CreditMethodProtocol.swift in Sources */,
+				2BB2A0742391B1DB0066AC5C /* UITableViewExtension.swift in Sources */,
 				2B89E026238469160079FE14 /* StandardMethod.swift in Sources */,
 				2B89E024238468FE0079FE14 /* AnnuityMethod.swift in Sources */,
+				2B89E0322385A50F0079FE14 /* UIColorExtension.swift in Sources */,
 				2BE8F01023845830005A3774 /* ApartmentsSchemeBuilder.swift in Sources */,
 				2BE8F01A23845910005A3774 /* OnePaymentModel.swift in Sources */,
 				2BB9BF8023816B4400C5B4D4 /* AppDelegate.swift in Sources */,
+				2BB2A07C2391D4D10066AC5C /* SliderViewModelFactory.swift in Sources */,
 				2B596D072383DB3200C2A435 /* DateExtension.swift in Sources */,
+				2BB2A0722391B06D0066AC5C /* NSObjectExtension.swift in Sources */,
 				2B0E7E8A2381A9DB0022E407 /* PaymentSchemeCell.swift in Sources */,
 				2B596D052382F7A900C2A435 /* ApartmentsScheme.swift in Sources */,
+				2BB2A0782391C9140066AC5C /* UIFontExtension.swift in Sources */,
+				2BB2A07A2391C97E0066AC5C /* UIFont+Resize.swift in Sources */,
 				2BB9BFAA2381737E00C5B4D4 /* CalculatorViewController.swift in Sources */,
+				2BB2A06C2391AEBC0066AC5C /* FormatterValueProtocol.swift in Sources */,
 				2BE8F02223845C5C005A3774 /* CreditType.swift in Sources */,
 				2BB9BFA62381709300C5B4D4 /* SceneDelegate.swift in Sources */,
+				2B8D4BCC23916A97006E9D7C /* SliderTableViewCell.swift in Sources */,
+				2BB2A0762391C8590066AC5C /* StringProtocolExtension.swift in Sources */,
+				2BB2A07E2391D61E0066AC5C /* CurrencyExtension.swift in Sources */,
 				2B0E7E8223819A0A0022E407 /* CalculatorHeaderView.swift in Sources */,
 				2B89E03023852CC20079FE14 /* StringExtension.swift in Sources */,
 				2BE8F01223845858005A3774 /* PaymentSchemeFactory.swift in Sources */,

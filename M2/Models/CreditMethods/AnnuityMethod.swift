@@ -11,7 +11,7 @@ import Foundation
 struct AnnuityMethod: CreditMethodProtocol {
     func calculate(_ dataStore: CreditDataStoreProtocol) -> [OnePaymentModel] {
         var payments = [OnePaymentModel]()
-        if dataStore.creditTerm > 0 {
+        if dataStore.creditTerm > 0 && dataStore.creditBody > 0 {
             let percentPerMonth = dataStore.creditPercent/12
             let i = percentPerMonth
             let n = Double(dataStore.creditTerm)

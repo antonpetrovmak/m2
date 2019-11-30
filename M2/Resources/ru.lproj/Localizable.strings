@@ -6,13 +6,15 @@
   Copyright © 2019 APM. All rights reserved.
 */
 
-"cost_per_square_meter" = "Стоимость 1-го м²";
-"apartment_area" = "Прощадь квартиры";
+"title_cost_per_square_meter" = "Стоимость 1-го м²";
+"title_apartment_area" = "Площадь квартиры";
 "apartment_cost" = "Стоимость квартиры";
 
-"loan_terms" = "Срок кредитования";
+"title_initial_fee" = "Первоначальный взнос";
+
+"title_loan_terms" = "Срок кредитования";
 "credit_amount" = "Сумма кредита";
-"interest_rate" = "Процентная ставка";
+"title_interest_rate" = "Процентная ставка";
 
 "one_time_commission" = "Единоразовая комиссия";
 "monthly_commission" = "Ежемесячная комиссия";
@@ -26,3 +28,9 @@
 
 "annuity" = "Аннуитет";
 "standard" = "Стандарт";
+
+"square_meter" = "м²";
+"short_month" = "мес";
+"yaer_1" = "год";
+"yaers_2" = "года";
+"yaers_3" = "лет";

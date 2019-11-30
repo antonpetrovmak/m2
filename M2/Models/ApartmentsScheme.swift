@@ -8,14 +8,21 @@
 
 import UIKit
 
-//struct ApartmentsScheme {
-//    var dollarRate: Double
-//    var apartmentArea: Double
-//    var costOfOneQquareMeter: Double
-//    var initialFee: Double
-//
-//    var creditBody: Double
-//    var creditAnnualRate: Double
-//    var creditTerm: Int
-//}
-
+struct ApartmentsScheme {
+    let apartmentArea: Double
+    let costOfOneQquareMeter: Double
+    let apartmentCost: Double
+    
+    let initialFee: Double
+    let initialFeePercent: Double
+    
+    let creditPercent: Double
+    let creditTerm: Int
+    
+    let creditType: CreditType
+    
+    var creditBody: Double
+    
+    var payments: [OnePaymentModel]
+    var limitations: Limitations
+}
