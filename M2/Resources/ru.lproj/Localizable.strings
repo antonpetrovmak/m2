@@ -20,11 +20,11 @@
 "monthly_commission" = "Ежемесячная комиссия";
 
 "month" = "Месяц";
-"loan_debt" = "Остаток долга";
-"loan_repayment" = "Погашение кредита";
-"loan_interest" = "Проценты по кредиту";
+"loan_debt" = "Остаток\nдолга";
+"loan_repayment" = "Погашение\nкредита";
+"loan_interest" = "Проценты по\nкредиту";
 "commission" = "Комиссия";
-"payout_per_month" = "Месячный платеж";
+"payout_per_month" = "Месячный\nплатеж";
 
 "annuity" = "Аннуитет";
 "standard" = "Стандарт";
@@ -34,3 +34,9 @@
 "yaer_1" = "год";
 "yaers_2" = "года";
 "yaers_3" = "лет";
+"short_first" = "1-й";
+
+"title_card_monthly_payment" = "Ежемесячный платеж";
+"title_card_body_credit" = "Тело кредита";
+"title_card_loan_interest" = "% по кредиту";
+"title_card_apartment_cost" = "Стоимость квартиры";

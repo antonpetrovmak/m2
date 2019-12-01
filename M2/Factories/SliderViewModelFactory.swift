@@ -8,12 +8,26 @@
 
 import UIKit
 
+enum SliderType: Int {
+    case apartmentArea = 0
+    case costOfOneQquareMeter
+    case initialFee
+    case creditTerm
+    case creditPercent
+}
+
 struct SliderViewModelFactory {
+    
+    func makeSliderType(by index: Int) -> SliderType? {
+        return SliderType.init(rawValue: index)
+    }
+    
     func makeSlidersViewModels(_ model: ApartmentsScheme) -> [SliderTableViewCellViewModel] {
         
         let apartmentArea = SliderTableViewCellViewModel(
             minimumValue: Float(model.limitations.apartmentArea.min),
             maximumValue: Float(model.limitations.apartmentArea.max),
+            step: Float(model.limitations.apartmentArea.step),
             value: Float(model.apartmentArea),
             title: "title_apartment_area".localized,
             rigthFormatter: ApartmentAreaFormatter(),
@@ -22,6 +36,7 @@ struct SliderViewModelFactory {
         let costOfOneQquareMeter = SliderTableViewCellViewModel(
             minimumValue: Float(model.limitations.costOfOneQquareMeter.min),
             maximumValue: Float(model.limitations.costOfOneQquareMeter.max),
+            step: Float(model.limitations.costOfOneQquareMeter.step),
             value: Float(model.costOfOneQquareMeter),
             title: "title_cost_per_square_meter".localized,
             rigthFormatter: CostOfOneQquareMeterFormatter(),
@@ -30,23 +45,25 @@ struct SliderViewModelFactory {
         let initialFee = SliderTableViewCellViewModel(
             minimumValue: Float(model.limitations.initialFee.min),
             maximumValue: Float(model.limitations.initialFee.max),
+            step: Float(model.limitations.initialFee.step),
             value: Float(model.initialFee),
             title: "title_initial_fee".localized,
             rigthFormatter: InitialFeeFormatter(),
-            leftFormatter: nil)
-        
+            leftFormatter: initialFeePercentFormatter(fullAmount: model.apartmentCost))
         
         let creditTerm = SliderTableViewCellViewModel(
             minimumValue: Float(model.limitations.creditTerm.min),
             maximumValue: Float(model.limitations.creditTerm.max),
+            step: Float(model.limitations.creditTerm.step),
             value: Float(model.creditTerm),
             title: "title_loan_terms".localized,
             rigthFormatter: CreditTermFormatter(),
-            leftFormatter: nil)
+            leftFormatter: CreditTermMonthFormatter())
         
         let creditPercent = SliderTableViewCellViewModel(
             minimumValue: Float(model.limitations.creditPercent.min),
             maximumValue: Float(model.limitations.creditPercent.max),
+            step: Float(model.limitations.creditPercent.step),
             value: Float(model.creditPercent),
             title: "title_interest_rate".localized,
             rigthFormatter: CreditPercentFormatter(),
@@ -57,18 +74,19 @@ struct SliderViewModelFactory {
 }
 
 struct ApartmentAreaFormatter: FormatterValueProtocol {
+    
     func format(from value: Float) -> NSAttributedString? {
         let squareMeter = " " + "square_meter".localized
         let fullString = "\(String(format: "%.1f", value))\(squareMeter)"
         
         let attributedString = NSMutableAttributedString(
             string: fullString,
-            attributes: [.font: UIFont.HelveticaNeue.Bold(32).resize,
+            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
                          .foregroundColor: Theme.black])
         
         [squareMeter]
             .compactMap{ fullString.nsRange(of: $0) }
-            .forEach { attributedString.addAttributes([.font: UIFont.HelveticaNeue.Bold(12).resize],
+            .forEach { attributedString.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
                                                       range: $0) }
         return attributedString
     }
@@ -81,7 +99,7 @@ struct CostOfOneQquareMeterFormatter: FormatterValueProtocol {
         
         let attributedString = NSMutableAttributedString(
             string: fullString,
-            attributes: [.font: UIFont.HelveticaNeue.Bold(32).resize,
+            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
                          .foregroundColor: Theme.black])
         
         return attributedString
@@ -95,8 +113,50 @@ struct InitialFeeFormatter: FormatterValueProtocol {
         
         let attributedString = NSMutableAttributedString(
             string: fullString,
-            attributes: [.font: UIFont.HelveticaNeue.Bold(32).resize,
+            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
                          .foregroundColor: Theme.black])
+        
+        return attributedString
+    }
+}
+
+struct initialFeePercentFormatter: FormatterValueProtocol {
+    let fullAmount: Double
+    
+    func format(from value: Float) -> NSAttributedString? {
+        
+        let persent = " %"
+        let initialFeePercent = value / Float(fullAmount)
+        let fullString = "\(String(format: "%.1f", initialFeePercent * 100))\(persent)"
+        
+        let attributedString = NSMutableAttributedString(
+            string: fullString,
+            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
+                         .foregroundColor: Theme.gray_BDBDBD])
+        [persent]
+            .compactMap{ fullString.nsRange(of: $0) }
+            .forEach { attributedString.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
+                                                      range: $0) }
+        return attributedString
+    }
+}
+
+struct CreditTermMonthFormatter: FormatterValueProtocol {
+    
+    func format(from value: Float) -> NSAttributedString? {
+        let monthsStr = " " + "short_month".localized
+        let fullString = "\(Int(value))" + monthsStr
+        
+        let attributedString = NSMutableAttributedString(
+            string: fullString,
+            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
+                         .foregroundColor: Theme.gray_BDBDBD])
+        
+        [monthsStr]
+            .compactMap{ $0 }
+            .compactMap{ fullString.nsRange(of: $0) }
+            .forEach { attributedString.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
+                                                      range: $0) }
         
         return attributedString
     }
@@ -138,13 +198,13 @@ struct CreditTermFormatter: FormatterValueProtocol {
         
         let attributedString = NSMutableAttributedString(
             string: fullString,
-            attributes: [.font: UIFont.HelveticaNeue.Bold(32).resize,
+            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
                          .foregroundColor: Theme.black])
         
         [yearsStr, monthsStr]
             .compactMap{ $0 }
             .compactMap{ fullString.nsRange(of: $0) }
-            .forEach { attributedString.addAttributes([.font: UIFont.HelveticaNeue.Bold(12).resize],
+            .forEach { attributedString.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
                                                       range: $0) }
         
         return attributedString
@@ -155,15 +215,15 @@ struct CreditPercentFormatter: FormatterValueProtocol {
     func format(from value: Float) -> NSAttributedString? {
         
         let persent = " %"
-        let fullString = "\(String(format: "%.2f", value * 100))\(persent)"
+        let fullString = "\(String(format: "%.1f", value * 100))\(persent)"
         
         let attributedString = NSMutableAttributedString(
             string: fullString,
-            attributes: [.font: UIFont.HelveticaNeue.Bold(32).resize,
+            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
                          .foregroundColor: Theme.black])
         [persent]
             .compactMap{ fullString.nsRange(of: $0) }
-            .forEach { attributedString.addAttributes([.font: UIFont.HelveticaNeue.Bold(12).resize],
+            .forEach { attributedString.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
                                                       range: $0) }
         return attributedString
     }

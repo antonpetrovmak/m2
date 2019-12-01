@@ -39,7 +39,7 @@ struct AnnuityMethod: CreditMethodProtocol {
         payments.append(payment)
         
         let nextLoanDebt = loanDebt - loanRepayment
-        if nextLoanDebt <= 0 { return }
+        guard Int(nextLoanDebt) > 0 else { return }
         
         annuity(payments: &payments,
                  date: date.addMonth(1),

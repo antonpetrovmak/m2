@@ -11,6 +11,7 @@ import UIKit
 struct SliderTableViewCellViewModel {
     var minimumValue: Float
     var maximumValue: Float
+    var step: Float
     var value: Float
     var title: String
     var rigthFormatter: FormatterValueProtocol?

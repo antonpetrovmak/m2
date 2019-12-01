@@ -9,14 +9,14 @@
 import Foundation
 
 struct Limitations {
-    typealias Limit = (min: Double, max: Double)
+    typealias Limit = (min: Double, max: Double, step: Double)
     
-    var apartmentArea          = Limit(1, 300)
-    var costOfOneQquareMeter   = Limit(100, 1_000_000)
-    var initialFee             = Limit(0, 1_000_000)
-    var initialFeePercent      = Limit(0, 100)
-    var creditPercent          = Limit(0, 0.5)
-    var creditTerm             = Limit(0, 120)
+    var apartmentArea          = Limit(1, 300, 1)
+    var costOfOneQquareMeter   = Limit(100, 100_000, 100)
+    var initialFee             = Limit(0, 1_000_000, 1000)
+    var initialFeePercent      = Limit(0, 100, 1000)
+    var creditPercent          = Limit(0.01, 0.5, 0.001)
+    var creditTerm             = Limit(1, 120, 1)
 }
 
 public class ApartmentsSchemeBuilder: CreditDataStoreProtocol {
@@ -63,6 +63,14 @@ public class ApartmentsSchemeBuilder: CreditDataStoreProtocol {
     func setCreditType(_ creditType: CreditType) {
         self.creditType = creditType
     }
+    
+    func setCreditPercent(_ creditPercent: Double) {
+        self.creditPercent = creditPercent
+    }
+    
+    func setCreditTerm(_ creditTerm: Int) {
+        self.creditTerm = creditTerm
+    }
 }
 
 // MARK: - Calculable values
@@ -82,8 +90,26 @@ extension ApartmentsSchemeBuilder {
     
     private var limitations: Limitations {
         var limits = Limitations()
-        limits.initialFee.max = apartmentCost
+        
+        let maxInitialFee = apartmentCost * 0.9
+        let initialFeeStep = getInitialFeeStep(maxInitialFee)
+        limits.initialFee.step = initialFeeStep
+        limits.initialFee.max = (maxInitialFee / initialFeeStep) * initialFeeStep
         return limits
+    }
+    
+    func getInitialFeeStep(_ apartmentCost: Double) -> Double {
+        switch apartmentCost {
+        case 0...100: return 10
+        case 101...10_000: return 100
+        case 10_001...100_000: return 1000
+        case 100_001...500_000: return 5_000
+        case 500_001...1_000_000: return 10_000
+        case 1_000_001...3_000_000: return 20_000
+        case 3_000_001...5_000_000: return 50_000
+        case 5_000_001...100_000_000: return 100_000
+        default: return 500_000
+        }
     }
 }
 
@@ -93,7 +119,7 @@ extension ApartmentsSchemeBuilder {
     func build() -> ApartmentsScheme {
         let model = ApartmentsScheme(apartmentArea: apartmentArea,
                                      costOfOneQquareMeter: costOfOneQquareMeter,
-                                     apartmentCost: apartmentArea,
+                                     apartmentCost: apartmentCost,
                                      initialFee: initialFee,
                                      initialFeePercent: initialFeePercent,
                                      creditPercent: creditPercent,

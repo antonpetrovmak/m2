@@ -28,11 +28,13 @@ import UIKit
  */
 
 extension UIFont {
-    enum HelveticaNeue {
-        private static let familyName = "HelveticaNeue"
+    
+    enum BaseFamily {
+        
+        private static let baseFamilyName = "Sarabun"
         
         private static func font(_ style: String, _ size: CGFloat) -> UIFont {
-            return UIFont(name: "\(familyName)-\(style)", size: size)!
+            return UIFont(name: "\(baseFamilyName)-\(style)", size: size)!
         }
         
         static func Regular(_ size: CGFloat) -> UIFont {
@@ -51,8 +53,13 @@ extension UIFont {
             return font("Medium", size)
         }
         
-        static func UltraLight(_ size: CGFloat) -> UIFont {
-            return font("UltraLight", size)
+        static func SemiBold(_ size: CGFloat) -> UIFont {
+            return font("SemiBold", size)
+        }
+        
+        static func Italic(_ size: CGFloat) -> UIFont {
+            return font("Italic", size)
         }
     }
+    
 }

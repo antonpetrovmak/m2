@@ -20,11 +20,11 @@
 "monthly_commission" = "Monthly commission";
 
 "month" = "Month";
-"loan_debt" = "Loan debt";
-"loan_repayment" = "Loan repayment";
-"loan_interest" = "Loan interest";
+"loan_debt" = "Loan\ndebt";
+"loan_repayment" = "Loan\nrepayment";
+"loan_interest" = "Loan\ninterest";
 "commission" = "Commission";
-"payout_per_month" = "Payout per month";
+"payout_per_month" = "Payout per\nmonth";
 
 "annuity" = "Annuity";
 "standard" = "Standard";
@@ -34,3 +34,9 @@
 "yaer_1" = "year";
 "yaers_2" = "years";
 "yaers_3" = "years";
+"short_first" = "1st";
+
+"title_card_monthly_payment" = "Monthly payment";
+"title_card_body_credit" = "Credit  amount";
+"title_card_loan_interest" = "% on loan";
+"title_card_apartment_cost" = "Cost of the apartment";

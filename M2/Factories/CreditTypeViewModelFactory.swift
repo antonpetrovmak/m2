@@ -8,6 +8,10 @@
 
 import UIKit
 
-class CreditTypeViewModelFactory: NSObject {
-
+struct CreditTypeViewModelFactory {
+    func makeCreditTypeCellViewModel(_ selectedIndex: Int) -> CreditTypeCellViewModel {
+        return CreditTypeCellViewModel(selectedIndex: selectedIndex,
+                                       segments: [CreditType.standard.localizedString,
+                                                  CreditType.annuity.localizedString])
+    }
 }

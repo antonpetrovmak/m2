@@ -12,6 +12,8 @@
 		2B0E7E872381A90E0022E407 /* PaymentSchemeSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E7E862381A90E0022E407 /* PaymentSchemeSectionView.xib */; };
 		2B0E7E8A2381A9DB0022E407 /* PaymentSchemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0E7E882381A9DB0022E407 /* PaymentSchemeCell.swift */; };
 		2B0E7E8B2381A9DB0022E407 /* PaymentSchemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E7E892381A9DB0022E407 /* PaymentSchemeCell.xib */; };
+		2B4E65992392ACD00024007A /* CreditTypeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E65982392ACD00024007A /* CreditTypeViewModelFactory.swift */; };
+		2B4E659B2393B8DD0024007A /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E659A2393B8DD0024007A /* CustomSegmentedControl.swift */; };
 		2B596D052382F7A900C2A435 /* ApartmentsScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B596D042382F7A900C2A435 /* ApartmentsScheme.swift */; };
 		2B596D072383DB3200C2A435 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B596D062383DB3200C2A435 /* DateExtension.swift */; };
 		2B89E024238468FE0079FE14 /* AnnuityMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89E023238468FE0079FE14 /* AnnuityMethod.swift */; };
@@ -34,6 +36,27 @@
 		2BB2A07A2391C97E0066AC5C /* UIFont+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0792391C97E0066AC5C /* UIFont+Resize.swift */; };
 		2BB2A07C2391D4D10066AC5C /* SliderViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A07B2391D4D10066AC5C /* SliderViewModelFactory.swift */; };
 		2BB2A07E2391D61E0066AC5C /* CurrencyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A07D2391D61E0066AC5C /* CurrencyExtension.swift */; };
+		2BB2A081239274400066AC5C /* ResultCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A07F239274400066AC5C /* ResultCardCell.swift */; };
+		2BB2A082239274400066AC5C /* ResultCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A080239274400066AC5C /* ResultCardCell.xib */; };
+		2BB2A096239278380066AC5C /* Sarabun-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A086239278380066AC5C /* Sarabun-Italic.ttf */; };
+		2BB2A097239278380066AC5C /* Sarabun-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A087239278380066AC5C /* Sarabun-ExtraLightItalic.ttf */; };
+		2BB2A098239278380066AC5C /* Sarabun-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A088239278380066AC5C /* Sarabun-ExtraBold.ttf */; };
+		2BB2A099239278380066AC5C /* Sarabun-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A089239278380066AC5C /* Sarabun-ExtraLight.ttf */; };
+		2BB2A09A239278380066AC5C /* Sarabun-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A08A239278380066AC5C /* Sarabun-Thin.ttf */; };
+		2BB2A09B239278380066AC5C /* Sarabun-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A08B239278380066AC5C /* Sarabun-ThinItalic.ttf */; };
+		2BB2A09C239278380066AC5C /* Sarabun-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A08C239278380066AC5C /* Sarabun-BoldItalic.ttf */; };
+		2BB2A09D239278380066AC5C /* Sarabun-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A08D239278380066AC5C /* Sarabun-Regular.ttf */; };
+		2BB2A09E239278380066AC5C /* Sarabun-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A08E239278380066AC5C /* Sarabun-Bold.ttf */; };
+		2BB2A09F239278380066AC5C /* Sarabun-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A08F239278380066AC5C /* Sarabun-SemiBold.ttf */; };
+		2BB2A0A0239278380066AC5C /* Sarabun-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A090239278380066AC5C /* Sarabun-SemiBoldItalic.ttf */; };
+		2BB2A0A1239278380066AC5C /* Sarabun-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A091239278380066AC5C /* Sarabun-Medium.ttf */; };
+		2BB2A0A2239278380066AC5C /* Sarabun-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A092239278380066AC5C /* Sarabun-ExtraBoldItalic.ttf */; };
+		2BB2A0A3239278380066AC5C /* Sarabun-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A093239278380066AC5C /* Sarabun-Light.ttf */; };
+		2BB2A0A4239278380066AC5C /* Sarabun-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A094239278380066AC5C /* Sarabun-LightItalic.ttf */; };
+		2BB2A0A5239278380066AC5C /* Sarabun-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A095239278380066AC5C /* Sarabun-MediumItalic.ttf */; };
+		2BB2A0A723928D2D0066AC5C /* ResultCardViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0A623928D2D0066AC5C /* ResultCardViewModelFactory.swift */; };
+		2BB2A0AA2392A7FB0066AC5C /* CreditTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0A82392A7FB0066AC5C /* CreditTypeCell.swift */; };
+		2BB2A0AB2392A7FB0066AC5C /* CreditTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BB2A0A92392A7FB0066AC5C /* CreditTypeCell.xib */; };
 		2BB9BF8023816B4400C5B4D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9BF7F23816B4400C5B4D4 /* AppDelegate.swift */; };
 		2BB9BF8723816B4400C5B4D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9BF8523816B4400C5B4D4 /* Main.storyboard */; };
 		2BB9BF8923816B4500C5B4D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9BF8823816B4500C5B4D4 /* Assets.xcassets */; };
@@ -74,6 +97,8 @@
 		2B0E7E862381A90E0022E407 /* PaymentSchemeSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentSchemeSectionView.xib; sourceTree = "<group>"; };
 		2B0E7E882381A9DB0022E407 /* PaymentSchemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSchemeCell.swift; sourceTree = "<group>"; };
 		2B0E7E892381A9DB0022E407 /* PaymentSchemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentSchemeCell.xib; sourceTree = "<group>"; };
+		2B4E65982392ACD00024007A /* CreditTypeViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTypeViewModelFactory.swift; sourceTree = "<group>"; };
+		2B4E659A2393B8DD0024007A /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		2B596D042382F7A900C2A435 /* ApartmentsScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsScheme.swift; sourceTree = "<group>"; };
 		2B596D062383DB3200C2A435 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		2B89E023238468FE0079FE14 /* AnnuityMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnuityMethod.swift; sourceTree = "<group>"; };
@@ -97,6 +122,27 @@
 		2BB2A0792391C97E0066AC5C /* UIFont+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Resize.swift"; sourceTree = "<group>"; };
 		2BB2A07B2391D4D10066AC5C /* SliderViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewModelFactory.swift; sourceTree = "<group>"; };
 		2BB2A07D2391D61E0066AC5C /* CurrencyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExtension.swift; sourceTree = "<group>"; };
+		2BB2A07F239274400066AC5C /* ResultCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardCell.swift; sourceTree = "<group>"; };
+		2BB2A080239274400066AC5C /* ResultCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCardCell.xib; sourceTree = "<group>"; };
+		2BB2A086239278380066AC5C /* Sarabun-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-Italic.ttf"; sourceTree = "<group>"; };
+		2BB2A087239278380066AC5C /* Sarabun-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		2BB2A088239278380066AC5C /* Sarabun-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-ExtraBold.ttf"; sourceTree = "<group>"; };
+		2BB2A089239278380066AC5C /* Sarabun-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-ExtraLight.ttf"; sourceTree = "<group>"; };
+		2BB2A08A239278380066AC5C /* Sarabun-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-Thin.ttf"; sourceTree = "<group>"; };
+		2BB2A08B239278380066AC5C /* Sarabun-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-ThinItalic.ttf"; sourceTree = "<group>"; };
+		2BB2A08C239278380066AC5C /* Sarabun-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2BB2A08D239278380066AC5C /* Sarabun-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-Regular.ttf"; sourceTree = "<group>"; };
+		2BB2A08E239278380066AC5C /* Sarabun-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-Bold.ttf"; sourceTree = "<group>"; };
+		2BB2A08F239278380066AC5C /* Sarabun-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-SemiBold.ttf"; sourceTree = "<group>"; };
+		2BB2A090239278380066AC5C /* Sarabun-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		2BB2A091239278380066AC5C /* Sarabun-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-Medium.ttf"; sourceTree = "<group>"; };
+		2BB2A092239278380066AC5C /* Sarabun-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		2BB2A093239278380066AC5C /* Sarabun-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-Light.ttf"; sourceTree = "<group>"; };
+		2BB2A094239278380066AC5C /* Sarabun-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-LightItalic.ttf"; sourceTree = "<group>"; };
+		2BB2A095239278380066AC5C /* Sarabun-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sarabun-MediumItalic.ttf"; sourceTree = "<group>"; };
+		2BB2A0A623928D2D0066AC5C /* ResultCardViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardViewModelFactory.swift; sourceTree = "<group>"; };
+		2BB2A0A82392A7FB0066AC5C /* CreditTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTypeCell.swift; sourceTree = "<group>"; };
+		2BB2A0A92392A7FB0066AC5C /* CreditTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditTypeCell.xib; sourceTree = "<group>"; };
 		2BB9BF7C23816B4400C5B4D4 /* M2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB9BF7F23816B4400C5B4D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BB9BF8623816B4400C5B4D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				2B8D4BCE23916A9E006E9D7C /* SliderTableViewCell */,
+				2BB2A084239274560066AC5C /* ResultCardCell */,
+				2BB2A0AC2392A8000066AC5C /* CreditTypeCell */,
 				2BE8F016238458D6005A3774 /* PaymentSchemeSectionView */,
 				2BE8F015238458C7005A3774 /* PaymentSchemeCell */,
 			);
@@ -188,6 +236,48 @@
 				2BB2A06D2391AED00066AC5C /* SliderTableViewCellViewModel.swift */,
 			);
 			path = SliderTableViewCell;
+			sourceTree = "<group>";
+		};
+		2BB2A084239274560066AC5C /* ResultCardCell */ = {
+			isa = PBXGroup;
+			children = (
+				2BB2A07F239274400066AC5C /* ResultCardCell.swift */,
+				2BB2A080239274400066AC5C /* ResultCardCell.xib */,
+			);
+			path = ResultCardCell;
+			sourceTree = "<group>";
+		};
+		2BB2A085239278380066AC5C /* Sarabun */ = {
+			isa = PBXGroup;
+			children = (
+				2BB2A086239278380066AC5C /* Sarabun-Italic.ttf */,
+				2BB2A087239278380066AC5C /* Sarabun-ExtraLightItalic.ttf */,
+				2BB2A088239278380066AC5C /* Sarabun-ExtraBold.ttf */,
+				2BB2A089239278380066AC5C /* Sarabun-ExtraLight.ttf */,
+				2BB2A08A239278380066AC5C /* Sarabun-Thin.ttf */,
+				2BB2A08B239278380066AC5C /* Sarabun-ThinItalic.ttf */,
+				2BB2A08C239278380066AC5C /* Sarabun-BoldItalic.ttf */,
+				2BB2A08D239278380066AC5C /* Sarabun-Regular.ttf */,
+				2BB2A08E239278380066AC5C /* Sarabun-Bold.ttf */,
+				2BB2A08F239278380066AC5C /* Sarabun-SemiBold.ttf */,
+				2BB2A090239278380066AC5C /* Sarabun-SemiBoldItalic.ttf */,
+				2BB2A091239278380066AC5C /* Sarabun-Medium.ttf */,
+				2BB2A092239278380066AC5C /* Sarabun-ExtraBoldItalic.ttf */,
+				2BB2A093239278380066AC5C /* Sarabun-Light.ttf */,
+				2BB2A094239278380066AC5C /* Sarabun-LightItalic.ttf */,
+				2BB2A095239278380066AC5C /* Sarabun-MediumItalic.ttf */,
+			);
+			path = Sarabun;
+			sourceTree = "<group>";
+		};
+		2BB2A0AC2392A8000066AC5C /* CreditTypeCell */ = {
+			isa = PBXGroup;
+			children = (
+				2B4E659A2393B8DD0024007A /* CustomSegmentedControl.swift */,
+				2BB2A0A82392A7FB0066AC5C /* CreditTypeCell.swift */,
+				2BB2A0A92392A7FB0066AC5C /* CreditTypeCell.xib */,
+			);
+			path = CreditTypeCell;
 			sourceTree = "<group>";
 		};
 		2BB9BF7323816B4400C5B4D4 = {
@@ -270,6 +360,8 @@
 				2BE8F01123845858005A3774 /* PaymentSchemeFactory.swift */,
 				2BB2A06B2391AEBC0066AC5C /* FormatterValueProtocol.swift */,
 				2BB2A07B2391D4D10066AC5C /* SliderViewModelFactory.swift */,
+				2BB2A0A623928D2D0066AC5C /* ResultCardViewModelFactory.swift */,
+				2B4E65982392ACD00024007A /* CreditTypeViewModelFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -277,6 +369,7 @@
 		2BE8F01D2384599D005A3774 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2BB2A085239278380066AC5C /* Sarabun */,
 				2BB9BF8823816B4500C5B4D4 /* Assets.xcassets */,
 				2B89E02D23852B440079FE14 /* Localizable.strings */,
 			);
@@ -370,12 +463,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB2A082239274400066AC5C /* ResultCardCell.xib in Resources */,
 				2BB9BF8C23816B4500C5B4D4 /* LaunchScreen.storyboard in Resources */,
+				2BB2A0AB2392A7FB0066AC5C /* CreditTypeCell.xib in Resources */,
+				2BB2A09D239278380066AC5C /* Sarabun-Regular.ttf in Resources */,
+				2BB2A09C239278380066AC5C /* Sarabun-BoldItalic.ttf in Resources */,
+				2BB2A0A3239278380066AC5C /* Sarabun-Light.ttf in Resources */,
+				2BB2A09B239278380066AC5C /* Sarabun-ThinItalic.ttf in Resources */,
 				2B0E7E8B2381A9DB0022E407 /* PaymentSchemeCell.xib in Resources */,
+				2BB2A0A5239278380066AC5C /* Sarabun-MediumItalic.ttf in Resources */,
 				2BB9BF9E23816EFF00C5B4D4 /* inputFile.xcfilelist in Resources */,
+				2BB2A09A239278380066AC5C /* Sarabun-Thin.ttf in Resources */,
 				2B89E02B23852B440079FE14 /* Localizable.strings in Resources */,
+				2BB2A0A4239278380066AC5C /* Sarabun-LightItalic.ttf in Resources */,
+				2BB2A097239278380066AC5C /* Sarabun-ExtraLightItalic.ttf in Resources */,
+				2BB2A09E239278380066AC5C /* Sarabun-Bold.ttf in Resources */,
 				2BB9BF8923816B4500C5B4D4 /* Assets.xcassets in Resources */,
+				2BB2A098239278380066AC5C /* Sarabun-ExtraBold.ttf in Resources */,
 				2BB9BF8723816B4400C5B4D4 /* Main.storyboard in Resources */,
+				2BB2A096239278380066AC5C /* Sarabun-Italic.ttf in Resources */,
+				2BB2A0A1239278380066AC5C /* Sarabun-Medium.ttf in Resources */,
+				2BB2A09F239278380066AC5C /* Sarabun-SemiBold.ttf in Resources */,
+				2BB2A0A0239278380066AC5C /* Sarabun-SemiBoldItalic.ttf in Resources */,
+				2BB2A099239278380066AC5C /* Sarabun-ExtraLight.ttf in Resources */,
+				2BB2A0A2239278380066AC5C /* Sarabun-ExtraBoldItalic.ttf in Resources */,
 				2B8D4BCD23916A97006E9D7C /* SliderTableViewCell.xib in Resources */,
 				2B0E7E872381A90E0022E407 /* PaymentSchemeSectionView.xib in Resources */,
 			);
@@ -419,17 +530,22 @@
 				2B89E028238469340079FE14 /* CreditMethodProtocol.swift in Sources */,
 				2BB2A0742391B1DB0066AC5C /* UITableViewExtension.swift in Sources */,
 				2B89E026238469160079FE14 /* StandardMethod.swift in Sources */,
+				2BB2A0AA2392A7FB0066AC5C /* CreditTypeCell.swift in Sources */,
 				2B89E024238468FE0079FE14 /* AnnuityMethod.swift in Sources */,
 				2B89E0322385A50F0079FE14 /* UIColorExtension.swift in Sources */,
 				2BE8F01023845830005A3774 /* ApartmentsSchemeBuilder.swift in Sources */,
 				2BE8F01A23845910005A3774 /* OnePaymentModel.swift in Sources */,
 				2BB9BF8023816B4400C5B4D4 /* AppDelegate.swift in Sources */,
+				2BB2A081239274400066AC5C /* ResultCardCell.swift in Sources */,
 				2BB2A07C2391D4D10066AC5C /* SliderViewModelFactory.swift in Sources */,
 				2B596D072383DB3200C2A435 /* DateExtension.swift in Sources */,
 				2BB2A0722391B06D0066AC5C /* NSObjectExtension.swift in Sources */,
 				2B0E7E8A2381A9DB0022E407 /* PaymentSchemeCell.swift in Sources */,
 				2B596D052382F7A900C2A435 /* ApartmentsScheme.swift in Sources */,
+				2B4E65992392ACD00024007A /* CreditTypeViewModelFactory.swift in Sources */,
 				2BB2A0782391C9140066AC5C /* UIFontExtension.swift in Sources */,
+				2BB2A0A723928D2D0066AC5C /* ResultCardViewModelFactory.swift in Sources */,
+				2B4E659B2393B8DD0024007A /* CustomSegmentedControl.swift in Sources */,
 				2BB2A07A2391C97E0066AC5C /* UIFont+Resize.swift in Sources */,
 				2BB9BFAA2381737E00C5B4D4 /* CalculatorViewController.swift in Sources */,
 				2BB2A06C2391AEBC0066AC5C /* FormatterValueProtocol.swift in Sources */,
@@ -598,6 +714,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0.0.0;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2GS3DZHCM6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -610,6 +727,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apm.M2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -622,6 +740,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0.0.0;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2GS3DZHCM6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -634,6 +753,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apm.M2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

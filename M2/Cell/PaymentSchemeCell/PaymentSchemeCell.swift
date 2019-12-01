@@ -21,6 +21,20 @@ class PaymentSchemeCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
+    }
+    
+    private func setupUI() {
+        [month, loanDebt, loanRepayment, loanInterest, paymentsPerMonth]
+            .forEach {
+                $0?.font = UIFont.BaseFamily.Medium(12)
+                $0?.textColor = Theme.gray_757F8C
+        }
+        
+        paymentsPerMonth.textColor = Theme.red
+        
+        year.font = UIFont.BaseFamily.SemiBold(14)
+        year.textColor = Theme.purple_613EEA
     }
     
     func setupViewModel(_ viewModel: PaymentSchemeCellViewModel) {

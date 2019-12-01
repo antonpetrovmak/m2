@@ -14,12 +14,6 @@ class CalculatorViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    private lazy var calculatorHeaderView: CalculatorHeaderView = {
-        let headerView = CalculatorHeaderView(frame: CGRect(x: 0, y: 0, width: 0, height: 320))
-        headerView.delegate = self
-        return headerView
-    }()
-    
     lazy var viewModel: CalculatorViewModelProtocol = {
         var model = CalculatorViewModel()
         model.reloadData = { [weak self] in
@@ -36,7 +30,6 @@ class CalculatorViewController: UIViewController {
     }
     
     func setupTableView() {
-        //tableView.tableHeaderView = calculatorHeaderView
         tableView.backgroundColor = Theme.whiteDirtyLight
         tableView.dataSource = self
         tableView.delegate = self
@@ -44,6 +37,8 @@ class CalculatorViewController: UIViewController {
         tableView.registerHeaderFooterView(by: PaymentSchemeSectionView.self)
         tableView.registerCell(by: PaymentSchemeCell.self)
         tableView.registerCell(by: SliderTableViewCell.self)
+        tableView.registerCell(by: ResultCardCell.self)
+        tableView.registerCell(by: CreditTypeCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
     }
@@ -67,9 +62,7 @@ extension CalculatorViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let section = viewModel.sections[indexPath.section]
-        switch section {
+        switch viewModel.sections[indexPath.section] {
         case .paymentInput(let cells):
             switch cells[indexPath.row] {
             case .slider(let viewModel):
@@ -77,36 +70,46 @@ extension CalculatorViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.delegate = self
                 cell.setViewModel(viewModel)
                 return cell
-            default:
-                break
+            case .card(let viewModel):
+                let cell = tableView.dequeueReusableCell(ResultCardCell.self)
+                cell.setViewModel(viewModel)
+                return cell
+            case .segment(let viewModel):
+                let cell = tableView.dequeueReusableCell(CreditTypeCell.self)
+                cell.delegate = self
+                cell.setViewModel(viewModel)
+                return cell
+            default: break
             }
         case .paymentScheme(let cells):
-            break
+            switch cells[indexPath.row] {
+            case .paymentMonth(let viewModel):
+                let cell = tableView.dequeueReusableCell(PaymentSchemeCell.self)
+                cell.setupViewModel(viewModel)
+                return cell
+            default: break
+            }
         }
-        
         return UITableViewCell()
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentSchemeCell") as! PaymentSchemeCell
-//        let alpha: CGFloat = (indexPath.row % 2 == 0) ? 0 : 0.1
-//        cell.backgroundColor = Theme.mint1.withAlphaComponent(alpha)
-//        cell.setupViewModel(paymentsScheme[indexPath.row])
-//        return cell
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header = tableView.dequeueReusableHeaderFooterView(PaymentSchemeSectionView.self)
-//        //let year = tableDataSource.history[section].section
-//        //header.yearLabel.text = year
-//        return header
-//    }
-//    
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 50
-//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionType = viewModel.sections[section]
+        guard sectionType.isContainsHeader else { return nil }
+        let header = tableView.dequeueReusableHeaderFooterView(PaymentSchemeSectionView.self)
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let sectionType = viewModel.sections[section]
+        guard sectionType.isContainsHeader else { return 0.0 }
+        return 60
+    }
 }
 
 // MARK: - CalculatorHeaderViewDelegate
 
-extension CalculatorViewController: CalculatorHeaderViewDelegate {
+extension CalculatorViewController: CreditTypeCellDelegate {
     func segmentedControlValueChanged(_ index: Int) {
         viewModel.segmentedControlValueChanged(index)
     }
@@ -118,5 +121,10 @@ extension CalculatorViewController: SliderTableViewCellDelegate {
     func sliderDidChange(_ sender: UITableViewCell, _ value: Float) {
         guard let indexPath = tableView.indexPath(for: sender) else { return }
         viewModel.sliderDidChange(indexPath, value)
+    }
+    
+    func sliderDidStopped(_ sender: UITableViewCell, _ value: Float) {
+        guard let indexPath = tableView.indexPath(for: sender) else { return }
+        viewModel.sliderDidStopped(indexPath, value)
     }
 }

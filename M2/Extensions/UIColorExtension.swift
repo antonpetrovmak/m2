@@ -23,8 +23,10 @@ enum Theme {
   
     static let red = #colorLiteral(red: 0.9215686275, green: 0.3411764706, blue: 0.3411764706, alpha: 1)
   
-    static let purple1 = #colorLiteral(red: 0.631372549, green: 0.3294117647, blue: 0.9490196078, alpha: 1)
-    static let purple2 = #colorLiteral(red: 0.3803921569, green: 0.2431372549, blue: 0.9176470588, alpha: 1)
+    static let purple_613EEA = #colorLiteral(red: 0.3803921569, green: 0.2431372549, blue: 0.9176470588, alpha: 1)
+    static let purple_8676FB = #colorLiteral(red: 0.5254901961, green: 0.462745098, blue: 0.9843137255, alpha: 1)
+    static let purple_A154F2 = #colorLiteral(red: 0.631372549, green: 0.3294117647, blue: 0.9490196078, alpha: 1)
+    static let purple_AB7BFF = #colorLiteral(red: 0.6705882353, green: 0.4823529412, blue: 1, alpha: 1)
     
     static let blue_DCE6F0 = #colorLiteral(red: 0.862745098, green: 0.9019607843, blue: 0.9411764706, alpha: 1)
   

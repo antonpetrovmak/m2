@@ -34,7 +34,7 @@ struct StandardMethod: CreditMethodProtocol {
         payments.append(payment)
         
         let nextLoanDebt = loanDebt - loanRepayment
-        if nextLoanDebt <= 0 { return }
+        guard Int(nextLoanDebt) > 0 else { return }
         
         standard(payments: &payments,
                  date: date.addMonth(1),

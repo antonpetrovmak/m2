@@ -13,7 +13,7 @@ struct PaymentSchemeFactory {
     func makePaymentSchemeCellViewModel(_ model: OnePaymentModel) -> PaymentSchemeCellViewModel {
         let year: String? = (Int(model.date.stringDate(format: "MM")) == 1) ? model.date.stringDate(format: "yyyy") : nil
         return PaymentSchemeCellViewModel(
-            month: model.date.stringDate(format: "MMM"),
+            month: model.date.stringDate(format: "MMMM").firstCharacterUpperCase(),
             year: year,
             loanDebt: model.loanDebt.currency,
             loanRepayment: model.loanRepayment.currency,
