@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,32 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOMITY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKV-pK-ZDr">
-                                <rect key="frame" x="119" y="421" width="176.5" height="54"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="46"/>
-                                <color key="textColor" name="Purple_8676FB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="OgC-Oc-6qW">
+                                <rect key="frame" x="41.5" y="-59" width="331" height="1024"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="WhiteDirtyLight"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gKV-pK-ZDr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="DPu-Rj-Klk"/>
-                            <constraint firstItem="gKV-pK-ZDr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OQK-lD-vxe"/>
+                            <constraint firstItem="OgC-Oc-6qW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="G03-hu-FxH"/>
+                            <constraint firstItem="OgC-Oc-6qW" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.8" id="dMp-J2-yCK"/>
+                            <constraint firstItem="OgC-Oc-6qW" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="lBS-VP-ay5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <namedColor name="Purple_8676FB">
-            <color red="0.52549019607843139" green="0.46274509803921571" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="WhiteDirtyLight">
-            <color red="0.97647058823529409" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="LaunchIcon" width="1024" height="1024"/>
     </resources>
 </document>

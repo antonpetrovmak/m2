@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 enum SectionType {
     case paymentInput(_ cells: [CellType])
@@ -82,6 +83,8 @@ class CalculatorViewModel: CalculatorViewModelProtocol {
     
     func segmentedControlValueChanged(_ index: Int) {
         let type = CreditType.init(rawValue: index) ?? .standard
+        Analytics.logEvent("changed_credit_type",
+                           parameters: ["to": "\(index == 0 ? "standard" : "annuity")"])
         apartmentsSchemeBuilder.setCreditType(type)
         updateData()
     }
