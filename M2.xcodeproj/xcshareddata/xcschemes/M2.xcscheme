@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2BB9BF7B23816B4400C5B4D4"
-               BuildableName = "M2.app"
+               BuildableName = "Homity.app"
                BlueprintName = "M2"
                ReferencedContainer = "container:M2.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2BB9BF7B23816B4400C5B4D4"
-            BuildableName = "M2.app"
+            BuildableName = "Homity.app"
             BlueprintName = "M2"
             ReferencedContainer = "container:M2.xcodeproj">
          </BuildableReference>
@@ -63,7 +63,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2BB9BF7B23816B4400C5B4D4"
-            BuildableName = "M2.app"
+            BuildableName = "Homity.app"
             BlueprintName = "M2"
             ReferencedContainer = "container:M2.xcodeproj">
          </BuildableReference>

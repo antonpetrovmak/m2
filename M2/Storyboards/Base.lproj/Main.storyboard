@@ -36,11 +36,22 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wmw-J6-dJe">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hn-jl-kfA" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="763" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="750" constant="50" id="vLf-9T-mkI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="WhiteDirtyLight"/>
                         <constraints>
+                            <constraint firstItem="4hn-jl-kfA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QFF-5g-f7v" secondAttribute="leading" priority="750" id="0Mo-2C-v1a"/>
+                            <constraint firstItem="QFF-5g-f7v" firstAttribute="bottom" secondItem="4hn-jl-kfA" secondAttribute="bottom" id="2cn-6o-r85"/>
                             <constraint firstItem="Wmw-J6-dJe" firstAttribute="leading" secondItem="QFF-5g-f7v" secondAttribute="leading" id="CPh-BT-sZV"/>
+                            <constraint firstItem="4hn-jl-kfA" firstAttribute="centerX" secondItem="QFF-5g-f7v" secondAttribute="centerX" id="H76-Ax-dpg"/>
                             <constraint firstItem="QFF-5g-f7v" firstAttribute="trailing" secondItem="Wmw-J6-dJe" secondAttribute="trailing" id="gw5-2Z-SvU"/>
+                            <constraint firstItem="4hn-jl-kfA" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QFF-5g-f7v" secondAttribute="trailing" priority="750" id="n27-9B-dhP"/>
                             <constraint firstItem="Wmw-J6-dJe" firstAttribute="top" secondItem="QFF-5g-f7v" secondAttribute="top" id="qEZ-er-zSz"/>
                             <constraint firstAttribute="bottom" secondItem="Wmw-J6-dJe" secondAttribute="bottom" id="tRs-ua-VSJ"/>
                         </constraints>
@@ -50,6 +61,7 @@
                         <barButtonItem key="rightBarButtonItem" title="$" id="yp0-Lt-1TA"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="4hn-jl-kfA" id="Dau-v2-180"/>
                         <outlet property="tableView" destination="Wmw-J6-dJe" id="JXA-Nq-oaS"/>
                     </connections>
                 </viewController>

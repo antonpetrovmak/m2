@@ -7,12 +7,22 @@
 //
 
 import UIKit
-import SkyFloatingLabelTextField
-
+import GoogleMobileAds
 
 class CalculatorViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var bannerView: GADBannerView! {
+        didSet {
+            #if DEBUG
+            bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            #else
+            bannerView.adUnitID = "ca-app-pub-1930298360199276/5093504222"
+            #endif
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+        }
+    }
     
     lazy var viewModel: CalculatorViewModelProtocol = {
         var model = CalculatorViewModel()
@@ -27,6 +37,8 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+//        let a: String? = nil
+//        let b = a!
     }
     
     func setupTableView() {
@@ -41,6 +53,7 @@ class CalculatorViewController: UIViewController {
         tableView.registerCell(by: CreditTypeCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
     }
 }
 
