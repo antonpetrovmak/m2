@@ -8,5 +8,5 @@ target 'M2' do
   pod 'Firebase/AdMob'
   pod 'Fabric', '~> 1.10.2'
   pod 'Crashlytics', '~> 3.14.0'
-
+  pod 'FBSDKCoreKit'
 end

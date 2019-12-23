@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import Fabric
 import Crashlytics
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["6949d47404c6cd88aef1e83a1a1c241f"]
     //Crashlytics.sharedInstance().crash()
     return true
+  }
+  
+  func applicationDidBecomeActive(_ application: UIApplication) {
+    AppEvents.activateApp()
   }
 
 }
