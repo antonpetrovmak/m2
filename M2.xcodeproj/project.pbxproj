@@ -11,6 +11,8 @@
 		2B0E7E872381A90E0022E407 /* PaymentSchemeSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E7E862381A90E0022E407 /* PaymentSchemeSectionView.xib */; };
 		2B0E7E8A2381A9DB0022E407 /* PaymentSchemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0E7E882381A9DB0022E407 /* PaymentSchemeCell.swift */; };
 		2B0E7E8B2381A9DB0022E407 /* PaymentSchemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B0E7E892381A9DB0022E407 /* PaymentSchemeCell.xib */; };
+		2B33F6C923BE411000AD04FC /* SliderEditableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B33F6C823BE411000AD04FC /* SliderEditableTableViewCell.swift */; };
+		2B33F6CA23BE442E00AD04FC /* SliderEditableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B33F6C723BE406A00AD04FC /* SliderEditableTableViewCell.xib */; };
 		2B4E65992392ACD00024007A /* CreditTypeViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E65982392ACD00024007A /* CreditTypeViewModelFactory.swift */; };
 		2B4E659B2393B8DD0024007A /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E659A2393B8DD0024007A /* CustomSegmentedControl.swift */; };
 		2B596D052382F7A900C2A435 /* ApartmentsScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B596D042382F7A900C2A435 /* ApartmentsScheme.swift */; };
@@ -90,6 +92,8 @@
 		2B0E7E862381A90E0022E407 /* PaymentSchemeSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentSchemeSectionView.xib; sourceTree = "<group>"; };
 		2B0E7E882381A9DB0022E407 /* PaymentSchemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSchemeCell.swift; sourceTree = "<group>"; };
 		2B0E7E892381A9DB0022E407 /* PaymentSchemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentSchemeCell.xib; sourceTree = "<group>"; };
+		2B33F6C723BE406A00AD04FC /* SliderEditableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderEditableTableViewCell.xib; sourceTree = "<group>"; };
+		2B33F6C823BE411000AD04FC /* SliderEditableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderEditableTableViewCell.swift; sourceTree = "<group>"; };
 		2B4E65982392ACD00024007A /* CreditTypeViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTypeViewModelFactory.swift; sourceTree = "<group>"; };
 		2B4E659A2393B8DD0024007A /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		2B596D042382F7A900C2A435 /* ApartmentsScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsScheme.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 			children = (
 				2B8D4BCA23916A97006E9D7C /* SliderTableViewCell.swift */,
 				2B8D4BCB23916A97006E9D7C /* SliderTableViewCell.xib */,
+				2B33F6C823BE411000AD04FC /* SliderEditableTableViewCell.swift */,
+				2B33F6C723BE406A00AD04FC /* SliderEditableTableViewCell.xib */,
 				2BB2A0672391A3740066AC5C /* CustomSlider.swift */,
 				2BB2A06D2391AED00066AC5C /* SliderTableViewCellViewModel.swift */,
 			);
@@ -464,6 +470,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B33F6CA23BE442E00AD04FC /* SliderEditableTableViewCell.xib in Resources */,
 				2BB2A082239274400066AC5C /* ResultCardCell.xib in Resources */,
 				2BB9BF8C23816B4500C5B4D4 /* LaunchScreen.storyboard in Resources */,
 				2BB2A0AB2392A7FB0066AC5C /* CreditTypeCell.xib in Resources */,
@@ -587,6 +594,7 @@
 				2B4E659B2393B8DD0024007A /* CustomSegmentedControl.swift in Sources */,
 				2BB2A07A2391C97E0066AC5C /* UIFont+Resize.swift in Sources */,
 				2BB9BFAA2381737E00C5B4D4 /* CalculatorViewController.swift in Sources */,
+				2B33F6C923BE411000AD04FC /* SliderEditableTableViewCell.swift in Sources */,
 				2BB2A06C2391AEBC0066AC5C /* FormatterValueProtocol.swift in Sources */,
 				2BE8F02223845C5C005A3774 /* CreditType.swift in Sources */,
 				2BB9BFA62381709300C5B4D4 /* SceneDelegate.swift in Sources */,

@@ -28,7 +28,7 @@
         <!--1-->
         <scene sceneID="wqL-jg-N86">
             <objects>
-                <viewController storyboardIdentifier="CalculatorViewController" id="VNW-ga-oMu" customClass="CalculatorViewController" customModule="M2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalculatorViewController" id="VNW-ga-oMu" customClass="CalculatorViewController" customModule="Homity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wjk-IM-6Va">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

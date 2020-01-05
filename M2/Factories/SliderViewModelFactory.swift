@@ -75,53 +75,114 @@ struct SliderViewModelFactory {
 
 struct ApartmentAreaFormatter: FormatterValueProtocol {
     
+    var editable: Bool {
+        return true
+    }
+    
+    var keyboardType: UIKeyboardType {
+        return .decimalPad
+    }
+    
     func format(from value: Float) -> NSAttributedString? {
         let squareMeter = " " + "square_meter".localized
-        let fullString = "\(String(format: "%.1f", value))\(squareMeter)"
+        let fullString = "\(String(format: "%g", value))\(squareMeter)"
+        
+        let attributedString = getDefaultAttributedString(text: fullString)
+        
+        [squareMeter]
+            .compactMap{ fullString.nsRange(of: $0) }
+            .forEach { attributedString?.addAttributes([.font: smallFont],
+                                                       range: $0) }
+        return attributedString
+    }
+    
+    func formateToEditable(from value: Float) -> NSAttributedString? {
+        var fullString = ""
+        if value - Float(Int(value)) > 0 {
+            fullString = "\(String(format: "%g", value))"
+        } else {
+            fullString = "\(String(format: "%g", value))"
+        }
         
         let attributedString = NSMutableAttributedString(
             string: fullString,
             attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
                          .foregroundColor: Theme.black])
-        
-        [squareMeter]
-            .compactMap{ fullString.nsRange(of: $0) }
-            .forEach { attributedString.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
-                                                      range: $0) }
         return attributedString
+    }
+    
+    func formateFromEditable(from text: String) -> Float? {
+        let nf = NumberFormatter()
+        nf.decimalSeparator = "."
+        if let result = nf.number(from: text) {
+            return result.floatValue
+        } else {
+            nf.decimalSeparator = ","
+            if let result = nf.number(from: text) {
+                return result.floatValue
+            }
+        }
+        return nil
+    }
+    
+    func isValidInputValue(_ amount: String) -> Bool {
+        let amountReg = "[1-9][0-9]{0,2}[.,]{0,1}[0-9]{0,2}"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", amountReg)
+        return predicate.evaluate(with: amount)
     }
 }
 
 struct CostOfOneQquareMeterFormatter: FormatterValueProtocol {
+    
+    var editable: Bool = true
+    
     func format(from value: Float) -> NSAttributedString? {
-        
-        let fullString = "\(value.currency)"
-        
-        let attributedString = NSMutableAttributedString(
-            string: fullString,
-            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
-                         .foregroundColor: Theme.black])
-        
-        return attributedString
+        return getDefaultAttributedString(text: "\(value.currency)")
+    }
+    
+    func formateToEditable(from value: Float) -> NSAttributedString? {
+        return getDefaultAttributedString(text: "\(Int(value))")
+    }
+    
+    func formateFromEditable(from text: String) -> Float? {
+        return Float(text)
+    }
+    
+    func isValidInputValue(_ amount: String) -> Bool {
+      let amountReg = "[1-9][0-9]{0,6}"
+      let predicate = NSPredicate(format:"SELF MATCHES %@", amountReg)
+      return predicate.evaluate(with: amount)
     }
 }
 
 struct InitialFeeFormatter: FormatterValueProtocol {
+    var editable: Bool = true
+    
     func format(from value: Float) -> NSAttributedString? {
-        
-        let fullString = "\(value.currency)"
-        
-        let attributedString = NSMutableAttributedString(
-            string: fullString,
-            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
-                         .foregroundColor: Theme.black])
-        
-        return attributedString
+        return getDefaultAttributedString(text: "\(value.currency)")
+    }
+    
+    func formateToEditable(from value: Float) -> NSAttributedString? {
+        return getDefaultAttributedString(text: "\(Int(value))")
+    }
+    
+    func formateFromEditable(from text: String) -> Float? {
+        return Float(text)
+    }
+    
+    func isValidInputValue(_ amount: String) -> Bool {
+      let amountReg = "[1-9][0-9]{0,11}"
+      let predicate = NSPredicate(format:"SELF MATCHES %@", amountReg)
+      return predicate.evaluate(with: amount)
     }
 }
 
 struct initialFeePercentFormatter: FormatterValueProtocol {
     let fullAmount: Double
+    
+    var textColor: UIColor {
+        return Theme.gray_BDBDBD
+    }
     
     func format(from value: Float) -> NSAttributedString? {
         
@@ -129,13 +190,10 @@ struct initialFeePercentFormatter: FormatterValueProtocol {
         let initialFeePercent = value / Float(fullAmount)
         let fullString = "\(String(format: "%.1f", initialFeePercent * 100))\(persent)"
         
-        let attributedString = NSMutableAttributedString(
-            string: fullString,
-            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
-                         .foregroundColor: Theme.gray_BDBDBD])
+        let attributedString = getDefaultAttributedString(text: fullString)
         [persent]
             .compactMap{ fullString.nsRange(of: $0) }
-            .forEach { attributedString.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
+            .forEach { attributedString?.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
                                                       range: $0) }
         return attributedString
     }
@@ -143,19 +201,19 @@ struct initialFeePercentFormatter: FormatterValueProtocol {
 
 struct CreditTermMonthFormatter: FormatterValueProtocol {
     
+    var textColor: UIColor {
+        return Theme.gray_BDBDBD
+    }
+    
     func format(from value: Float) -> NSAttributedString? {
         let monthsStr = " " + "short_month".localized
         let fullString = "\(Int(value))" + monthsStr
         
-        let attributedString = NSMutableAttributedString(
-            string: fullString,
-            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
-                         .foregroundColor: Theme.gray_BDBDBD])
-        
+        let attributedString = getDefaultAttributedString(text: fullString)
         [monthsStr]
             .compactMap{ $0 }
             .compactMap{ fullString.nsRange(of: $0) }
-            .forEach { attributedString.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
+            .forEach { attributedString?.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
                                                       range: $0) }
         
         return attributedString
@@ -196,15 +254,12 @@ struct CreditTermFormatter: FormatterValueProtocol {
             }
         }
         
-        let attributedString = NSMutableAttributedString(
-            string: fullString,
-            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
-                         .foregroundColor: Theme.black])
+        let attributedString = getDefaultAttributedString(text: fullString)
         
         [yearsStr, monthsStr]
             .compactMap{ $0 }
             .compactMap{ fullString.nsRange(of: $0) }
-            .forEach { attributedString.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
+            .forEach { attributedString?.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
                                                       range: $0) }
         
         return attributedString
@@ -213,17 +268,13 @@ struct CreditTermFormatter: FormatterValueProtocol {
 
 struct CreditPercentFormatter: FormatterValueProtocol {
     func format(from value: Float) -> NSAttributedString? {
-        
         let persent = " %"
         let fullString = "\(String(format: "%.1f", value * 100))\(persent)"
         
-        let attributedString = NSMutableAttributedString(
-            string: fullString,
-            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
-                         .foregroundColor: Theme.black])
+        let attributedString = getDefaultAttributedString(text: fullString)
         [persent]
             .compactMap{ fullString.nsRange(of: $0) }
-            .forEach { attributedString.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
+            .forEach { attributedString?.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
                                                       range: $0) }
         return attributedString
     }

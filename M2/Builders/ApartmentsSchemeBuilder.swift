@@ -9,7 +9,21 @@
 import Foundation
 
 struct Limitations {
-    typealias Limit = (min: Double, max: Double, step: Double)
+    struct Limit {
+        let min: Double
+        var max: Double
+        var step: Double
+        
+        init(_ min: Double, _ max: Double, _ step: Double) {
+            self.min = min
+            self.max = max
+            self.step = step
+        }
+        
+        func around(value: Double) -> Double {
+            return Swift.min(Swift.max(value, self.min), self.max)
+        }
+    }
     
     var apartmentArea          = Limit(1, 300, 1)
     var costOfOneQquareMeter   = Limit(100, 80_000, 100)
@@ -37,17 +51,17 @@ public class ApartmentsSchemeBuilder: CreditDataStoreProtocol {
     // MARK: - Functions
     
     func setApartmentArea(_ area: Double) {
-        apartmentArea = min(area, limitations.apartmentArea.max)
+        apartmentArea = limitations.apartmentArea.around(value: area)
         setInitialFee(initialFee)
     }
     
     func setCostOfOneQquareMeter(_ cost: Double) {
-        costOfOneQquareMeter = cost
+        costOfOneQquareMeter = limitations.costOfOneQquareMeter.around(value: cost)
         setInitialFee(initialFee)
     }
     
     func setInitialFee(_ initialFee: Double) {
-        self.initialFee = min(initialFee, limitations.initialFee.max)
+        self.initialFee = limitations.initialFee.around(value: initialFee)
         self.initialFeePercent = initialFee == 0 ? 0 : (initialFee / apartmentCost)
     }
     

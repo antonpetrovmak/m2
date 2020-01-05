@@ -21,12 +21,16 @@ private var currencyFormatter: NumberFormatter {
 
 extension Double {
     var currency: String {
-        return currencyFormatter.string(from: NSNumber(value: self))!
+        return currencyFormatter
+            .string(from: NSNumber(value: self))!
+            .trimmingCharacters(in: .whitespaces)
     }
 }
 
 extension Float {
     var currency: String {
-        return currencyFormatter.string(from: NSNumber(value: self))!
+        return currencyFormatter
+            .string(from: NSNumber(value: self))!
+            .trimmingCharacters(in: .whitespaces)
     }
 }

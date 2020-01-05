@@ -50,6 +50,7 @@ class CalculatorViewController: UIViewController {
         tableView.registerHeaderFooterView(by: PaymentSchemeSectionView.self)
         tableView.registerCell(by: PaymentSchemeCell.self)
         tableView.registerCell(by: SliderTableViewCell.self)
+        tableView.registerCell(by: SliderEditableTableViewCell.self)
         tableView.registerCell(by: ResultCardCell.self)
         tableView.registerCell(by: CreditTypeCell.self)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -80,7 +81,7 @@ extension CalculatorViewController: UITableViewDataSource, UITableViewDelegate {
         case .paymentInput(let cells):
             switch cells[indexPath.row] {
             case .slider(let viewModel):
-                let cell = tableView.dequeueReusableCell(SliderTableViewCell.self)
+                let cell = tableView.dequeueReusableCell(SliderEditableTableViewCell.self)
                 cell.delegate = self
                 cell.setViewModel(viewModel)
                 return cell
@@ -140,5 +141,19 @@ extension CalculatorViewController: SliderTableViewCellDelegate {
     func sliderDidStopped(_ sender: UITableViewCell, _ value: Float) {
         guard let indexPath = tableView.indexPath(for: sender) else { return }
         viewModel.sliderDidStopped(indexPath, value)
+    }
+}
+
+// MARK: - SliderEditableTableViewCellDelegate
+
+extension CalculatorViewController: SliderEditableTableViewCellDelegate {
+    func rightValueDidChanged(_ sender: UITableViewCell, _ value: Float) {
+        guard let indexPath = tableView.indexPath(for: sender) else { return }
+        viewModel.rightValueDidEntered(indexPath, value)
+    }
+    
+    func leftValueDidChanged(_ sender: UITableViewCell, _ value: Float) {
+        guard let indexPath = tableView.indexPath(for: sender) else { return }
+        viewModel.leftValueDidEntered(indexPath, value)
     }
 }

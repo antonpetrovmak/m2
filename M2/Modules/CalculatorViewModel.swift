@@ -36,6 +36,8 @@ protocol CalculatorViewModelProtocol {
     func segmentedControlValueChanged(_ index: Int)
     func sliderDidChange(_ indexPath: IndexPath, _ value: Float)
     func sliderDidStopped(_ indexPath: IndexPath, _ value: Float)
+    func rightValueDidEntered(_ indexPath: IndexPath, _ value: Float)
+    func leftValueDidEntered(_ indexPath: IndexPath, _ value: Float)
 }
 
 class CalculatorViewModel: CalculatorViewModelProtocol {
@@ -110,6 +112,18 @@ class CalculatorViewModel: CalculatorViewModelProtocol {
     }
     
     func sliderDidStopped(_ indexPath: IndexPath, _ value: Float) {
+        guard let sliderType = slidersFactory.makeSliderType(by: indexPath.row) else { return }
+        updateSliderValue(sliderType, value)
+        updateData()
+    }
+    
+    func rightValueDidEntered(_ indexPath: IndexPath, _ value: Float) {
+        guard let sliderType = slidersFactory.makeSliderType(by: indexPath.row) else { return }
+        updateSliderValue(sliderType, value)
+        updateData()
+    }
+    
+    func leftValueDidEntered(_ indexPath: IndexPath, _ value: Float) {
         guard let sliderType = slidersFactory.makeSliderType(by: indexPath.row) else { return }
         updateSliderValue(sliderType, value)
         updateData()
