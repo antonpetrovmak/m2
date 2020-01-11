@@ -8,6 +8,19 @@
 
 import UIKit
 
+class CustomUITextField: UITextField {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        tintColor = Theme.clear
+        placeholder = "0"
+    }
+    
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false
+    }
+}
+
 protocol SliderEditableTableViewCellDelegate {
     func rightValueDidChanged(_ sender: UITableViewCell, _ value: Float)
     func leftValueDidChanged(_ sender: UITableViewCell, _ value: Float)
@@ -18,7 +31,7 @@ class SliderEditableTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var leftLabel: UILabel!
-    @IBOutlet weak var rightTextField: UITextField!
+    @IBOutlet weak var rightTextField: CustomUITextField!
     @IBOutlet weak var slider: CustomSlider!
     
     weak var delegate: (SliderTableViewCellDelegate & SliderEditableTableViewCellDelegate)?
@@ -46,6 +59,7 @@ class SliderEditableTableViewCell: UITableViewCell {
             rightTextField.font = formatter.font
             rightTextField.textColor = formatter.textColor
             rightTextField.keyboardType = formatter.keyboardType
+            rightTextField.attributedPlaceholder = formatter.formatPlaceholder(from: viewModel.minimumValue)
         }
         if let leftFormatter = viewModel.leftFormatter {
             leftLabel.isUserInteractionEnabled = leftFormatter.editable
@@ -65,7 +79,7 @@ class SliderEditableTableViewCell: UITableViewCell {
         leftLabel.attributedText = viewModel?.leftFormatter?.format(from: value)
     }
     
-    private func setRightEditableFormat(by value: Float) {
+    private func setRightEditableFormat(by value: Float?) {
         rightTextField.attributedText = viewModel?.rigthFormatter?.formateToEditable(from: value)
     }
     
@@ -106,14 +120,17 @@ extension SliderEditableTableViewCell: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if rightTextField == textField {
-            guard let value = viewModel?.rigthFormatter?.formateFromEditable(from: textField.text ?? "") else { return }
+            guard let text = textField.text,
+                let viewModel = viewModel else { return }
+            let processedText = text.isEmpty ? "\(viewModel.minimumValue)" : text
+            guard let value = viewModel.rigthFormatter?.formateFromEditable(from: processedText) else { return }
             delegate?.rightValueDidChanged(self, value)
         }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if rightTextField == textField {
-            guard let value = viewModel?.value else { return }
+            let value = viewModel?.value == viewModel?.minimumValue ? nil : viewModel?.value
             setRightEditableFormat(by: value)
         }
     }

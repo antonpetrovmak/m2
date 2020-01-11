@@ -79,7 +79,7 @@ public class ApartmentsSchemeBuilder: CreditDataStoreProtocol {
     }
     
     func setCreditPercent(_ creditPercent: Double) {
-        self.creditPercent = creditPercent
+        self.creditPercent = limitations.creditPercent.around(value: creditPercent)
     }
     
     func setCreditTerm(_ creditTerm: Int) {

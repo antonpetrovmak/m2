@@ -25,6 +25,7 @@
 		2B89E0322385A50F0079FE14 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89E0312385A50F0079FE14 /* UIColorExtension.swift */; };
 		2B8D4BCC23916A97006E9D7C /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D4BCA23916A97006E9D7C /* SliderTableViewCell.swift */; };
 		2B8D4BCD23916A97006E9D7C /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D4BCB23916A97006E9D7C /* SliderTableViewCell.xib */; };
+		2B904CB423C2459C0092A626 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B904CB323C2459C0092A626 /* BaseViewController.swift */; };
 		2B9710FB23AAD1FC003DB0FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B9710FA23AAD1FC003DB0FA /* GoogleService-Info.plist */; };
 		2BB2A0682391A3740066AC5C /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0672391A3740066AC5C /* CustomSlider.swift */; };
 		2BB2A06A2391A39E0066AC5C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB2A0692391A39E0066AC5C /* UIViewExtension.swift */; };
@@ -75,6 +76,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2B3F6C2523C63C6700514108 /* Embed PlugIns */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed PlugIns";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2BB9BFAD23817A4400C5B4D4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -94,6 +105,8 @@
 		2B0E7E892381A9DB0022E407 /* PaymentSchemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentSchemeCell.xib; sourceTree = "<group>"; };
 		2B33F6C723BE406A00AD04FC /* SliderEditableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderEditableTableViewCell.xib; sourceTree = "<group>"; };
 		2B33F6C823BE411000AD04FC /* SliderEditableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderEditableTableViewCell.swift; sourceTree = "<group>"; };
+		2B3F6C1923C63BB200514108 /* HomityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomityTests.swift; sourceTree = "<group>"; };
+		2B3F6C1B23C63BB200514108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B4E65982392ACD00024007A /* CreditTypeViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTypeViewModelFactory.swift; sourceTree = "<group>"; };
 		2B4E659A2393B8DD0024007A /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		2B596D042382F7A900C2A435 /* ApartmentsScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsScheme.swift; sourceTree = "<group>"; };
@@ -107,6 +120,7 @@
 		2B89E0312385A50F0079FE14 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		2B8D4BCA23916A97006E9D7C /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
 		2B8D4BCB23916A97006E9D7C /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
+		2B904CB323C2459C0092A626 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2B9710FA23AAD1FC003DB0FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2BB2A0672391A3740066AC5C /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		2BB2A0692391A39E0066AC5C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -191,6 +205,15 @@
 				2BE8F015238458C7005A3774 /* PaymentSchemeCell */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2B3F6C1823C63BB200514108 /* HomityTests */ = {
+			isa = PBXGroup;
+			children = (
+				2B3F6C1923C63BB200514108 /* HomityTests.swift */,
+				2B3F6C1B23C63BB200514108 /* Info.plist */,
+			);
+			path = HomityTests;
 			sourceTree = "<group>";
 		};
 		2B596D032382F6F600C2A435 /* Models */ = {
@@ -291,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				2BB9BF7E23816B4400C5B4D4 /* M2 */,
+				2B3F6C1823C63BB200514108 /* HomityTests */,
 				2BB9BF7D23816B4400C5B4D4 /* Products */,
 				1B1A9CF49884D911F563D980 /* Pods */,
 				D0ADC2ED275CC2B4D8EF49E0 /* Frameworks */,
@@ -379,6 +403,7 @@
 			children = (
 				2BB9BFA92381737E00C5B4D4 /* CalculatorViewController.swift */,
 				2BB2A06F2391AF000066AC5C /* CalculatorViewModel.swift */,
+				2B904CB323C2459C0092A626 /* BaseViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -421,6 +446,7 @@
 				2BB9BFAD23817A4400C5B4D4 /* Embed Frameworks */,
 				EDEAF3F4EAF73A455E7217B4 /* [CP] Embed Pods Frameworks */,
 				2B64A4092395948300C978A2 /* Fabric */,
+				2B3F6C2523C63C6700514108 /* Embed PlugIns */,
 			);
 			buildRules = (
 			);
@@ -591,6 +617,7 @@
 				2B4E65992392ACD00024007A /* CreditTypeViewModelFactory.swift in Sources */,
 				2BB2A0782391C9140066AC5C /* UIFontExtension.swift in Sources */,
 				2BB2A0A723928D2D0066AC5C /* ResultCardViewModelFactory.swift in Sources */,
+				2B904CB423C2459C0092A626 /* BaseViewController.swift in Sources */,
 				2B4E659B2393B8DD0024007A /* CustomSegmentedControl.swift in Sources */,
 				2BB2A07A2391C97E0066AC5C /* UIFont+Resize.swift in Sources */,
 				2BB9BFAA2381737E00C5B4D4 /* CalculatorViewController.swift in Sources */,
@@ -762,7 +789,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon1;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.0.2;
+				CURRENT_PROJECT_VERSION = 0.0.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2GS3DZHCM6;
@@ -777,7 +804,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apm.homity.app;
 				PRODUCT_NAME = Homity;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -793,7 +820,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon1;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 0.0.2;
+				CURRENT_PROJECT_VERSION = 0.0.0;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2GS3DZHCM6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -807,7 +834,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.apm.homity.app;
 				PRODUCT_NAME = Homity;
 				PROVISIONING_PROFILE_SPECIFIER = "";

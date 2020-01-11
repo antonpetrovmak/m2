@@ -35,4 +35,6 @@ enum Theme {
     static let gray_A6AAB4 = #colorLiteral(red: 0.6509803922, green: 0.6666666667, blue: 0.7058823529, alpha: 1)
     static let gray_757F8C = #colorLiteral(red: 0.4588235294, green: 0.4980392157, blue: 0.5490196078, alpha: 1)
     static let gray_4F4F4F = #colorLiteral(red: 0.3098039216, green: 0.3098039216, blue: 0.3098039216, alpha: 1)
+    
+    static let clear = UIColor.clear
 }

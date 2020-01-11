@@ -96,19 +96,13 @@ struct ApartmentAreaFormatter: FormatterValueProtocol {
         return attributedString
     }
     
-    func formateToEditable(from value: Float) -> NSAttributedString? {
-        var fullString = ""
-        if value - Float(Int(value)) > 0 {
-            fullString = "\(String(format: "%g", value))"
-        } else {
-            fullString = "\(String(format: "%g", value))"
-        }
-        
-        let attributedString = NSMutableAttributedString(
-            string: fullString,
-            attributes: [.font: UIFont.BaseFamily.SemiBold(32).resize,
-                         .foregroundColor: Theme.black])
-        return attributedString
+    func formatPlaceholder(from value: Float) -> NSAttributedString? {
+        return getPlaceholderAttributedString(text: "\(String(format: "%g", value))")
+    }
+    
+    func formateToEditable(from value: Float?) -> NSAttributedString? {
+        guard let value = value else { return nil }
+        return getDefaultAttributedString(text: "\(String(format: "%g", value))")
     }
     
     func formateFromEditable(from text: String) -> Float? {
@@ -126,7 +120,7 @@ struct ApartmentAreaFormatter: FormatterValueProtocol {
     }
     
     func isValidInputValue(_ amount: String) -> Bool {
-        let amountReg = "[1-9][0-9]{0,2}[.,]{0,1}[0-9]{0,2}"
+        let amountReg = "^[1-9][0-9]{0,2}([,.][0-9]{0,2})?$"
         let predicate = NSPredicate(format:"SELF MATCHES %@", amountReg)
         return predicate.evaluate(with: amount)
     }
@@ -140,7 +134,12 @@ struct CostOfOneQquareMeterFormatter: FormatterValueProtocol {
         return getDefaultAttributedString(text: "\(value.currency)")
     }
     
-    func formateToEditable(from value: Float) -> NSAttributedString? {
+    func formatPlaceholder(from value: Float) -> NSAttributedString? {
+        return getPlaceholderAttributedString(text: "\(Int(value))")
+    }
+    
+    func formateToEditable(from value: Float?) -> NSAttributedString? {
+        guard let value = value else { return nil }
         return getDefaultAttributedString(text: "\(Int(value))")
     }
     
@@ -162,7 +161,12 @@ struct InitialFeeFormatter: FormatterValueProtocol {
         return getDefaultAttributedString(text: "\(value.currency)")
     }
     
-    func formateToEditable(from value: Float) -> NSAttributedString? {
+    func formatPlaceholder(from value: Float) -> NSAttributedString? {
+        return getPlaceholderAttributedString(text: "\(Int(value))")
+    }
+    
+    func formateToEditable(from value: Float?) -> NSAttributedString? {
+        guard let value = value else { return nil }
         return getDefaultAttributedString(text: "\(Int(value))")
     }
     
@@ -178,6 +182,7 @@ struct InitialFeeFormatter: FormatterValueProtocol {
 }
 
 struct initialFeePercentFormatter: FormatterValueProtocol {
+    
     let fullAmount: Double
     
     var textColor: UIColor {
@@ -185,7 +190,6 @@ struct initialFeePercentFormatter: FormatterValueProtocol {
     }
     
     func format(from value: Float) -> NSAttributedString? {
-        
         let persent = " %"
         let initialFeePercent = value / Float(fullAmount)
         let fullString = "\(String(format: "%.1f", initialFeePercent * 100))\(persent)"
@@ -267,9 +271,18 @@ struct CreditTermFormatter: FormatterValueProtocol {
 }
 
 struct CreditPercentFormatter: FormatterValueProtocol {
+    
+    var editable: Bool {
+        return true
+    }
+    
+    var keyboardType: UIKeyboardType {
+        return .decimalPad
+    }
+    
     func format(from value: Float) -> NSAttributedString? {
         let persent = " %"
-        let fullString = "\(String(format: "%.1f", value * 100))\(persent)"
+        let fullString = "\(String(format: "%g", value * 100))\(persent)"
         
         let attributedString = getDefaultAttributedString(text: fullString)
         [persent]
@@ -277,5 +290,34 @@ struct CreditPercentFormatter: FormatterValueProtocol {
             .forEach { attributedString?.addAttributes([.font: UIFont.BaseFamily.SemiBold(12).resize],
                                                       range: $0) }
         return attributedString
+    }
+    
+    func formatPlaceholder(from value: Float) -> NSAttributedString? {
+        return getPlaceholderAttributedString(text: "\(Int(value))")
+    }
+    
+    func formateToEditable(from value: Float?) -> NSAttributedString? {
+        guard let value = value else { return nil }
+        return getDefaultAttributedString(text: "\(String(format: "%g", value * 100))")
+    }
+    
+    func formateFromEditable(from text: String) -> Float? {
+        let nf = NumberFormatter()
+        nf.decimalSeparator = "."
+        if let result = nf.number(from: text) {
+            return result.floatValue / 100
+        } else {
+            nf.decimalSeparator = ","
+            if let result = nf.number(from: text) {
+                return result.floatValue / 100
+            }
+        }
+        return nil
+    }
+    
+    func isValidInputValue(_ amount: String) -> Bool {
+        let amountReg = "^[0-9]{0,2}([,.][0-9]{0,2})?$"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", amountReg)
+        return predicate.evaluate(with: amount)
     }
 }

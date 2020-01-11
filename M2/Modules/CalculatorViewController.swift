@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 import Firebase
 
-class CalculatorViewController: UIViewController {
+class CalculatorViewController: BaseViewController {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var bannerView: GADBannerView! {
