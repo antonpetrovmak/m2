@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     GADMobileAds.sharedInstance().start(completionHandler: nil)
     GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["6949d47404c6cd88aef1e83a1a1c241f"]
     //Crashlytics.sharedInstance().crash()
+    FirebaseManager.share.feachResidentialComplex()
+    FirebaseManager.share.fetchCredits()
     return true
   }
   

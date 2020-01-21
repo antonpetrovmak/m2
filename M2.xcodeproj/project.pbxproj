@@ -17,6 +17,10 @@
 		2B4E659B2393B8DD0024007A /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E659A2393B8DD0024007A /* CustomSegmentedControl.swift */; };
 		2B596D052382F7A900C2A435 /* ApartmentsScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B596D042382F7A900C2A435 /* ApartmentsScheme.swift */; };
 		2B596D072383DB3200C2A435 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B596D062383DB3200C2A435 /* DateExtension.swift */; };
+		2B5ABF4223C9F5E900084448 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5ABF4123C9F5E900084448 /* FirebaseManager.swift */; };
+		2B5ABF4423CA31FD00084448 /* ResidentialComplex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5ABF4323CA31FD00084448 /* ResidentialComplex.swift */; };
+		2B5ABF4723CB8C2C00084448 /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5ABF4523CB8C2C00084448 /* CodableExtension.swift */; };
+		2B5ABF4823CB8C2C00084448 /* Enum+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5ABF4623CB8C2C00084448 /* Enum+Decodable.swift */; };
 		2B89E024238468FE0079FE14 /* AnnuityMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89E023238468FE0079FE14 /* AnnuityMethod.swift */; };
 		2B89E026238469160079FE14 /* StandardMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89E025238469160079FE14 /* StandardMethod.swift */; };
 		2B89E028238469340079FE14 /* CreditMethodProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89E027238469340079FE14 /* CreditMethodProtocol.swift */; };
@@ -111,6 +115,10 @@
 		2B4E659A2393B8DD0024007A /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		2B596D042382F7A900C2A435 /* ApartmentsScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsScheme.swift; sourceTree = "<group>"; };
 		2B596D062383DB3200C2A435 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		2B5ABF4123C9F5E900084448 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		2B5ABF4323CA31FD00084448 /* ResidentialComplex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResidentialComplex.swift; sourceTree = "<group>"; };
+		2B5ABF4523CB8C2C00084448 /* CodableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
+		2B5ABF4623CB8C2C00084448 /* Enum+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Enum+Decodable.swift"; sourceTree = "<group>"; };
 		2B89E023238468FE0079FE14 /* AnnuityMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnuityMethod.swift; sourceTree = "<group>"; };
 		2B89E025238469160079FE14 /* StandardMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardMethod.swift; sourceTree = "<group>"; };
 		2B89E027238469340079FE14 /* CreditMethodProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditMethodProtocol.swift; sourceTree = "<group>"; };
@@ -224,6 +232,7 @@
 				2BE8F017238458EB005A3774 /* Currency.swift */,
 				2BE8F01923845910005A3774 /* OnePaymentModel.swift */,
 				2BE8F02123845C5C005A3774 /* CreditType.swift */,
+				2B5ABF4323CA31FD00084448 /* ResidentialComplex.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,6 +240,8 @@
 		2B596D082383DB3900C2A435 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2B5ABF4523CB8C2C00084448 /* CodableExtension.swift */,
+				2B5ABF4623CB8C2C00084448 /* Enum+Decodable.swift */,
 				2B596D062383DB3200C2A435 /* DateExtension.swift */,
 				2B89E02F23852CC20079FE14 /* StringExtension.swift */,
 				2B89E0312385A50F0079FE14 /* UIColorExtension.swift */,
@@ -243,6 +254,14 @@
 				2BB2A07D2391D61E0066AC5C /* CurrencyExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2B5ABF4023C9F5BE00084448 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2B5ABF4123C9F5E900084448 /* FirebaseManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		2B89E022238468EB0079FE14 /* CreditMethods */ = {
@@ -334,6 +353,7 @@
 			children = (
 				2BB9BF7F23816B4400C5B4D4 /* AppDelegate.swift */,
 				2BB9BFA52381709300C5B4D4 /* SceneDelegate.swift */,
+				2B5ABF4023C9F5BE00084448 /* Network */,
 				2BE8F01C23845940005A3774 /* Factories */,
 				2BE8F01B23845927005A3774 /* Builders */,
 				2B596D082383DB3900C2A435 /* Extensions */,
@@ -594,12 +614,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B5ABF4223C9F5E900084448 /* FirebaseManager.swift in Sources */,
 				2BE8F018238458EB005A3774 /* Currency.swift in Sources */,
 				2BB2A0682391A3740066AC5C /* CustomSlider.swift in Sources */,
 				2BB2A06A2391A39E0066AC5C /* UIViewExtension.swift in Sources */,
 				2BB2A06E2391AED00066AC5C /* SliderTableViewCellViewModel.swift in Sources */,
 				2BB2A0702391AF000066AC5C /* CalculatorViewModel.swift in Sources */,
+				2B5ABF4823CB8C2C00084448 /* Enum+Decodable.swift in Sources */,
 				2B89E028238469340079FE14 /* CreditMethodProtocol.swift in Sources */,
+				2B5ABF4723CB8C2C00084448 /* CodableExtension.swift in Sources */,
+				2B5ABF4423CA31FD00084448 /* ResidentialComplex.swift in Sources */,
 				2BB2A0742391B1DB0066AC5C /* UITableViewExtension.swift in Sources */,
 				2B89E026238469160079FE14 /* StandardMethod.swift in Sources */,
 				2BB2A0AA2392A7FB0066AC5C /* CreditTypeCell.swift in Sources */,
