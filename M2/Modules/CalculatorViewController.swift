@@ -15,11 +15,7 @@ class CalculatorViewController: BaseViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var bannerView: GADBannerView! {
         didSet {
-            #if DEBUG
-            bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-            #else
-            bannerView.adUnitID = "ca-app-pub-1930298360199276/5093504222"
-            #endif
+            bannerView.adUnitID = Config.BannerADUnitID
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
         }
@@ -38,8 +34,6 @@ class CalculatorViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-//        let a: String? = nil
-//        let b = a!
     }
     
     func setupTableView() {

@@ -8,25 +8,6 @@
 
 import UIKit
 
-
-/*
- *** Helvetica Neue ***
- HelveticaNeue
- HelveticaNeue-Bold
- HelveticaNeue-BoldItalic
- HelveticaNeue-CondensedBlack
- HelveticaNeue-CondensedBold
- HelveticaNeue-Italic
- HelveticaNeue-Light
- HelveticaNeue-LightItalic
- HelveticaNeue-Medium
- HelveticaNeue-MediumItalic
- HelveticaNeue-Thin
- HelveticaNeue-ThinItalic
- HelveticaNeue-UltraLight
- HelveticaNeue-UltraLightItalic
- */
-
 extension UIFont {
     
     enum BaseFamily {

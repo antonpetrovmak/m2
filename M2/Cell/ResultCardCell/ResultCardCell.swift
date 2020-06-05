@@ -35,15 +35,7 @@ class ResultCardCell: UITableViewCell {
         super.awakeFromNib()
         setupUI()
     }
-    
-    override func layoutIfNeeded() {
-        super.layoutIfNeeded()
-//        let gradient = CAGradientLayer.makeGradientLayer(
-//            frame: bounds,
-//            colors:[Theme.purple_8676FB, Theme.purple_AB7BFF])
-//        layer.addSublayer(gradient)
-    }
-    
+
     private func setupUI() {
         paymentPerMonthLabel.text = "title_card_monthly_payment".localized.uppercased()
         apartmentCostLabel.text = "title_card_apartment_cost".localized.uppercased()

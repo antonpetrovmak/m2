@@ -66,6 +66,15 @@
 		2BB9BF8C23816B4500C5B4D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB9BF8A23816B4500C5B4D4 /* LaunchScreen.storyboard */; };
 		2BB9BFA62381709300C5B4D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9BFA52381709300C5B4D4 /* SceneDelegate.swift */; };
 		2BB9BFAA2381737E00C5B4D4 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9BFA92381737E00C5B4D4 /* CalculatorViewController.swift */; };
+		2BCDD918248A8CA800A74160 /* ApartmentAreaFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDD917248A8CA800A74160 /* ApartmentAreaFormatter.swift */; };
+		2BCDD91A248A8CCB00A74160 /* CostOfOneQquareMeterFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDD919248A8CCB00A74160 /* CostOfOneQquareMeterFormatter.swift */; };
+		2BCDD91C248A8CED00A74160 /* InitialFeeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDD91B248A8CED00A74160 /* InitialFeeFormatter.swift */; };
+		2BCDD91E248A8D3200A74160 /* InitialFeePercentFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDD91D248A8D3200A74160 /* InitialFeePercentFormatter.swift */; };
+		2BCDD920248A8D5A00A74160 /* CreditTermMonthFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDD91F248A8D5A00A74160 /* CreditTermMonthFormatter.swift */; };
+		2BCDD922248A8D6F00A74160 /* CreditTermFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDD921248A8D6F00A74160 /* CreditTermFormatter.swift */; };
+		2BCDD924248A8D8E00A74160 /* CreditPercentFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDD923248A8D8E00A74160 /* CreditPercentFormatter.swift */; };
+		2BCDD926248A8E6900A74160 /* Limitations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDD925248A8E6900A74160 /* Limitations.swift */; };
+		2BCDD928248A911900A74160 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCDD927248A911900A74160 /* Config.swift */; };
 		2BE8F01023845830005A3774 /* ApartmentsSchemeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8F00F23845830005A3774 /* ApartmentsSchemeBuilder.swift */; };
 		2BE8F01223845858005A3774 /* PaymentSchemeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8F01123845858005A3774 /* PaymentSchemeFactory.swift */; };
 		2BE8F014238458B5005A3774 /* PaymentSchemeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE8F013238458B5005A3774 /* PaymentSchemeCellViewModel.swift */; };
@@ -163,6 +172,15 @@
 		2BB9BF8D23816B4500C5B4D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BB9BFA52381709300C5B4D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2BB9BFA92381737E00C5B4D4 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		2BCDD917248A8CA800A74160 /* ApartmentAreaFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentAreaFormatter.swift; sourceTree = "<group>"; };
+		2BCDD919248A8CCB00A74160 /* CostOfOneQquareMeterFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostOfOneQquareMeterFormatter.swift; sourceTree = "<group>"; };
+		2BCDD91B248A8CED00A74160 /* InitialFeeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialFeeFormatter.swift; sourceTree = "<group>"; };
+		2BCDD91D248A8D3200A74160 /* InitialFeePercentFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialFeePercentFormatter.swift; sourceTree = "<group>"; };
+		2BCDD91F248A8D5A00A74160 /* CreditTermMonthFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTermMonthFormatter.swift; sourceTree = "<group>"; };
+		2BCDD921248A8D6F00A74160 /* CreditTermFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTermFormatter.swift; sourceTree = "<group>"; };
+		2BCDD923248A8D8E00A74160 /* CreditPercentFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditPercentFormatter.swift; sourceTree = "<group>"; };
+		2BCDD925248A8E6900A74160 /* Limitations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limitations.swift; sourceTree = "<group>"; };
+		2BCDD927248A911900A74160 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		2BE8F00F23845830005A3774 /* ApartmentsSchemeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApartmentsSchemeBuilder.swift; sourceTree = "<group>"; };
 		2BE8F01123845858005A3774 /* PaymentSchemeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSchemeFactory.swift; sourceTree = "<group>"; };
 		2BE8F013238458B5005A3774 /* PaymentSchemeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSchemeCellViewModel.swift; sourceTree = "<group>"; };
@@ -219,6 +237,7 @@
 		2B596D032382F6F600C2A435 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2BCDD916248A8C6800A74160 /* Formatters */,
 				2B89E022238468EB0079FE14 /* CreditMethods */,
 				2B596D042382F7A900C2A435 /* ApartmentsScheme.swift */,
 				2BE8F017238458EB005A3774 /* Currency.swift */,
@@ -344,9 +363,25 @@
 				2BE8F020238459D5005A3774 /* Storyboards */,
 				2BB9BF8D23816B4500C5B4D4 /* Info.plist */,
 				2B9710FA23AAD1FC003DB0FA /* GoogleService-Info.plist */,
+				2BCDD927248A911900A74160 /* Config.swift */,
 				2BE8F01D2384599D005A3774 /* Resources */,
 			);
 			path = M2;
+			sourceTree = "<group>";
+		};
+		2BCDD916248A8C6800A74160 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				2BB2A06B2391AEBC0066AC5C /* FormatterValueProtocol.swift */,
+				2BCDD917248A8CA800A74160 /* ApartmentAreaFormatter.swift */,
+				2BCDD919248A8CCB00A74160 /* CostOfOneQquareMeterFormatter.swift */,
+				2BCDD91B248A8CED00A74160 /* InitialFeeFormatter.swift */,
+				2BCDD91D248A8D3200A74160 /* InitialFeePercentFormatter.swift */,
+				2BCDD91F248A8D5A00A74160 /* CreditTermMonthFormatter.swift */,
+				2BCDD921248A8D6F00A74160 /* CreditTermFormatter.swift */,
+				2BCDD923248A8D8E00A74160 /* CreditPercentFormatter.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		2BE8F015238458C7005A3774 /* PaymentSchemeCell */ = {
@@ -372,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				2BE8F00F23845830005A3774 /* ApartmentsSchemeBuilder.swift */,
+				2BCDD925248A8E6900A74160 /* Limitations.swift */,
 			);
 			path = Builders;
 			sourceTree = "<group>";
@@ -380,7 +416,6 @@
 			isa = PBXGroup;
 			children = (
 				2BE8F01123845858005A3774 /* PaymentSchemeFactory.swift */,
-				2BB2A06B2391AEBC0066AC5C /* FormatterValueProtocol.swift */,
 				2BB2A07B2391D4D10066AC5C /* SliderViewModelFactory.swift */,
 				2BB2A0A623928D2D0066AC5C /* ResultCardViewModelFactory.swift */,
 				2B4E65982392ACD00024007A /* CreditTypeViewModelFactory.swift */,
@@ -597,7 +632,9 @@
 				2BE8F018238458EB005A3774 /* Currency.swift in Sources */,
 				2BB2A0682391A3740066AC5C /* CustomSlider.swift in Sources */,
 				2BB2A06A2391A39E0066AC5C /* UIViewExtension.swift in Sources */,
+				2BCDD922248A8D6F00A74160 /* CreditTermFormatter.swift in Sources */,
 				2BB2A06E2391AED00066AC5C /* SliderTableViewCellViewModel.swift in Sources */,
+				2BCDD91E248A8D3200A74160 /* InitialFeePercentFormatter.swift in Sources */,
 				2BB2A0702391AF000066AC5C /* CalculatorViewModel.swift in Sources */,
 				2B89E028238469340079FE14 /* CreditMethodProtocol.swift in Sources */,
 				2BB2A0742391B1DB0066AC5C /* UITableViewExtension.swift in Sources */,
@@ -606,12 +643,16 @@
 				2B89E024238468FE0079FE14 /* AnnuityMethod.swift in Sources */,
 				2B89E0322385A50F0079FE14 /* UIColorExtension.swift in Sources */,
 				2BE8F01023845830005A3774 /* ApartmentsSchemeBuilder.swift in Sources */,
+				2BCDD924248A8D8E00A74160 /* CreditPercentFormatter.swift in Sources */,
 				2BE8F01A23845910005A3774 /* OnePaymentModel.swift in Sources */,
 				2BB9BF8023816B4400C5B4D4 /* AppDelegate.swift in Sources */,
 				2BB2A081239274400066AC5C /* ResultCardCell.swift in Sources */,
+				2BCDD918248A8CA800A74160 /* ApartmentAreaFormatter.swift in Sources */,
 				2BB2A07C2391D4D10066AC5C /* SliderViewModelFactory.swift in Sources */,
 				2B596D072383DB3200C2A435 /* DateExtension.swift in Sources */,
+				2BCDD920248A8D5A00A74160 /* CreditTermMonthFormatter.swift in Sources */,
 				2BB2A0722391B06D0066AC5C /* NSObjectExtension.swift in Sources */,
+				2BCDD91C248A8CED00A74160 /* InitialFeeFormatter.swift in Sources */,
 				2B0E7E8A2381A9DB0022E407 /* PaymentSchemeCell.swift in Sources */,
 				2B596D052382F7A900C2A435 /* ApartmentsScheme.swift in Sources */,
 				2B4E65992392ACD00024007A /* CreditTypeViewModelFactory.swift in Sources */,
@@ -623,6 +664,8 @@
 				2BB9BFAA2381737E00C5B4D4 /* CalculatorViewController.swift in Sources */,
 				2B33F6C923BE411000AD04FC /* SliderEditableTableViewCell.swift in Sources */,
 				2BB2A06C2391AEBC0066AC5C /* FormatterValueProtocol.swift in Sources */,
+				2BCDD928248A911900A74160 /* Config.swift in Sources */,
+				2BCDD91A248A8CCB00A74160 /* CostOfOneQquareMeterFormatter.swift in Sources */,
 				2BE8F02223845C5C005A3774 /* CreditType.swift in Sources */,
 				2BB9BFA62381709300C5B4D4 /* SceneDelegate.swift in Sources */,
 				2B8D4BCC23916A97006E9D7C /* SliderTableViewCell.swift in Sources */,
@@ -630,6 +673,7 @@
 				2BB2A07E2391D61E0066AC5C /* CurrencyExtension.swift in Sources */,
 				2B89E03023852CC20079FE14 /* StringExtension.swift in Sources */,
 				2BE8F01223845858005A3774 /* PaymentSchemeFactory.swift in Sources */,
+				2BCDD926248A8E6900A74160 /* Limitations.swift in Sources */,
 				2BE8F014238458B5005A3774 /* PaymentSchemeCellViewModel.swift in Sources */,
 				2B0E7E852381A89F0022E407 /* PaymentSchemeSectionView.swift in Sources */,
 			);
@@ -793,10 +837,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2GS3DZHCM6;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "DEBUG=1";
 				INFOPLIST_FILE = M2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -823,10 +864,7 @@
 				CURRENT_PROJECT_VERSION = 0.0.0;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2GS3DZHCM6;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "DEBUG=0";
 				INFOPLIST_FILE = M2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
