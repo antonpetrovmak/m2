@@ -17,25 +17,25 @@ struct StandardMethod: CreditMethodProtocol {
                      date: Date(),
                      loanDebt: dataStore.creditBody,
                      loanRepayment: loanRepaymentPerMonth,
-                     percentPerMonth: dataStore.creditPercent/12)
+                     percentPerMonth: dataStore.creditPercent / 12)
         }
         return payments
     }
-    
+
     private func standard(payments: inout [OnePaymentModel], date: Date, loanDebt: Double, loanRepayment: Double, percentPerMonth: Double) {
-        
+
         let loanInterest = loanDebt * percentPerMonth
-        
+
         let payment = OnePaymentModel(date: date,
                                       loanDebt: loanDebt,
                                       loanRepayment: loanRepayment,
                                       loanInterest: loanInterest,
                                       paymentPerMonth: loanRepayment + loanInterest)
         payments.append(payment)
-        
+
         let nextLoanDebt = loanDebt - loanRepayment
         guard Int(nextLoanDebt) > 0 else { return }
-        
+
         standard(payments: &payments,
                  date: date.addMonth(1),
                  loanDebt: nextLoanDebt,

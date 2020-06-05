@@ -9,16 +9,16 @@
 import UIKit
 
 class PaymentSchemeSectionView: UITableViewHeaderFooterView {
-    
+
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var loanDebtLabel: UILabel!
     @IBOutlet var loanRepaymentLabel: UILabel!
     @IBOutlet var loanInterestLabel: UILabel!
     @IBOutlet var payoutPerMonthLabel: UILabel!
-    
+
     @IBOutlet var underStackView: UIView!
     @IBOutlet var stackView: UIStackView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundView?.backgroundColor = UIColor.clear
@@ -29,7 +29,7 @@ class PaymentSchemeSectionView: UITableViewHeaderFooterView {
         loanRepaymentLabel.text = "loan_repayment".localized
         loanInterestLabel.text = "loan_interest".localized
         payoutPerMonthLabel.text = "payout_per_month".localized
-        
+
         [monthLabel, loanDebtLabel, loanRepaymentLabel, loanInterestLabel, payoutPerMonthLabel]
             .forEach {
                 $0?.font = UIFont.BaseFamily.Light(11).resize
@@ -40,7 +40,7 @@ class PaymentSchemeSectionView: UITableViewHeaderFooterView {
                                  shadowOpacity: 0.1,
                                  shadowColor: Theme.black)
     }
-    
+
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
     }

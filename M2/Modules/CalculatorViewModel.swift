@@ -6,13 +6,13 @@
 //  Copyright © 2019 APM. All rights reserved.
 //
 
-import UIKit
 import Firebase
+import UIKit
 
 enum SectionType {
     case paymentInput(_ cells: [CellType])
     case paymentScheme(_ cells: [CellType])
-    
+
     var isContainsHeader: Bool {
         switch self {
         case .paymentInput:
@@ -41,56 +41,56 @@ protocol CalculatorViewModelProtocol {
 }
 
 class CalculatorViewModel: CalculatorViewModelProtocol {
-    
+
     // MARK: - CalculatorViewModelProtocol
-    
+
     private let apartmentsSchemeBuilder = ApartmentsSchemeBuilder()
-    
+
     private let factory = PaymentSchemeFactory()
     private let slidersFactory = SliderViewModelFactory()
     private let cardFactory = ResultCardViewModelFactory()
     private let creditTypeFactory = CreditTypeViewModelFactory()
-    
+
     init() {
         updateSections()
     }
-    
+
     private func updateSections() {
-        
+
         let apartmentsSchemeModel = apartmentsSchemeBuilder.build()
-        
+
         let sliders = slidersFactory.makeSlidersViewModels(apartmentsSchemeModel)
-            .map{ CellType.slider($0) }
-        
+            .map { CellType.slider($0) }
+
         let card = CellType.card(cardFactory.makeSlidersViewModels(apartmentsSchemeModel))
         let segment = CellType.segment(creditTypeFactory
             .makeCreditTypeCellViewModel(apartmentsSchemeModel.creditType.rawValue))
-        let section1 : [CellType] =  sliders + [card, segment]
-        
+        let section1: [CellType] =  sliders + [card, segment]
+
         let section2 = apartmentsSchemeModel.payments
             .map { factory.makePaymentSchemeCellViewModel($0) }
             .map { CellType.paymentMonth($0) }
         self.sections = [.paymentInput(section1), .paymentScheme(section2)]
     }
-    
+
     private func updateData() {
         self.updateSections()
         reloadData?()
     }
-    
+
     // MARK: - CalculatorViewModelProtocol
-    
+
     var sections = [SectionType]()
     var reloadData: (() -> Void)?
-    
+
     func segmentedControlValueChanged(_ index: Int) {
-        let type = CreditType.init(rawValue: index) ?? .standard
+        let type = CreditType(rawValue: index) ?? .standard
         Analytics.logEvent("changed_credit_type",
                            parameters: ["to": "\(index == 0 ? "standard" : "annuity")"])
         apartmentsSchemeBuilder.setCreditType(type)
         updateData()
     }
-    
+
     fileprivate func updateSliderValue(_ sliderType: SliderType, _ value: Float) {
         switch sliderType {
         case .apartmentArea:
@@ -105,24 +105,24 @@ class CalculatorViewModel: CalculatorViewModelProtocol {
             apartmentsSchemeBuilder.setCreditPercent(Double(value))
         }
     }
-    
+
     func sliderDidChange(_ indexPath: IndexPath, _ value: Float) {
         guard let sliderType = slidersFactory.makeSliderType(by: indexPath.row) else { return }
         updateSliderValue(sliderType, value)
     }
-    
+
     func sliderDidStopped(_ indexPath: IndexPath, _ value: Float) {
         guard let sliderType = slidersFactory.makeSliderType(by: indexPath.row) else { return }
         updateSliderValue(sliderType, value)
         updateData()
     }
-    
+
     func rightValueDidEntered(_ indexPath: IndexPath, _ value: Float) {
         guard let sliderType = slidersFactory.makeSliderType(by: indexPath.row) else { return }
         updateSliderValue(sliderType, value)
         updateData()
     }
-    
+
     func leftValueDidEntered(_ indexPath: IndexPath, _ value: Float) {
         guard let sliderType = slidersFactory.makeSliderType(by: indexPath.row) else { return }
         updateSliderValue(sliderType, value)

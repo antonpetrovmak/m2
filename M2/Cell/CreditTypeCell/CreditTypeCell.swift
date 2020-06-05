@@ -18,7 +18,7 @@ protocol CreditTypeCellDelegate: class {
 }
 
 class CreditTypeCell: UITableViewCell {
-    
+
     @IBOutlet weak var segmentControl: CustomSegmentedControl! {
         didSet {
             segmentControl.backgroundColor = Theme.white
@@ -33,14 +33,14 @@ class CreditTypeCell: UITableViewCell {
             segmentControl.layer.cornerRadius = 6
         }
     }
-    
+
     weak var delegate: CreditTypeCellDelegate?
-    
+
     func setViewModel(_ viewModel: CreditTypeCellViewModel) {
         segmentControl.setButtonTitles(buttonTitles: viewModel.segments)
         segmentControl.setIndex(index: viewModel.selectedIndex)
     }
-    
+
 }
 
 // MARK: CustomSegmentedControlDelegate

@@ -14,26 +14,26 @@ protocol SliderTableViewCellDelegate: class {
 }
 
 class SliderTableViewCell: UITableViewCell {
-    
+
     // MARK: - @IBOutlet
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var leftLabel: UILabel!
     @IBOutlet weak var rightLabel: UILabel!
     @IBOutlet weak var slider: CustomSlider!
-    
+
     weak var delegate: SliderTableViewCellDelegate?
     private var viewModel: SliderTableViewCellViewModel?
-    
+
     // MARK: - Public
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         titleLabel.font = UIFont.BaseFamily.Medium(14).resize
         titleLabel.textColor = Theme.gray_A6AAB4
         slider.addTarget(self, action: #selector(onSliderChanged(_:_:)), for: .valueChanged)
     }
-    
+
     func setViewModel(_ viewModel: SliderTableViewCellViewModel) {
         titleLabel.text = viewModel.title
         slider.minimumValue = viewModel.minimumValue
@@ -45,22 +45,22 @@ class SliderTableViewCell: UITableViewCell {
         setLeftLabel(by: viewModel.value)
         self.viewModel = viewModel
     }
-    
+
     // MARK: - Private
-    
+
     private var rigthFormatter: FormatterValueProtocol?
     private var leftFormatter: FormatterValueProtocol?
-    
+
     private func setRightLabel(by value: Float) {
         rightLabel.attributedText = rigthFormatter?.format(from: value)
     }
-    
+
     private func setLeftLabel(by value: Float) {
         leftLabel.attributedText = leftFormatter?.format(from: value)
     }
-    
+
     // MARK: - Actions
-    
+
     @objc func onSliderChanged(_ sender: UISlider, _ event: UIEvent) {
         if let touchEvent = event.allTouches?.first {
             switch touchEvent.phase {
@@ -79,10 +79,10 @@ class SliderTableViewCell: UITableViewCell {
             }
         }
     }
-    
+
     private func roundValueByStep(_ value: Float) -> Float {
         guard let step = viewModel?.step else { return value }
         return round(value / step) * step
     }
-    
+
 }

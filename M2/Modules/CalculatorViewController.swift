@@ -6,12 +6,12 @@
 //  Copyright © 2019 APM. All rights reserved.
 //
 
-import UIKit
-import GoogleMobileAds
 import Firebase
+import GoogleMobileAds
+import UIKit
 
 class CalculatorViewController: BaseViewController {
-    
+
     @IBOutlet var tableView: UITableView!
     @IBOutlet var bannerView: GADBannerView! {
         didSet {
@@ -20,7 +20,7 @@ class CalculatorViewController: BaseViewController {
             bannerView.load(GADRequest())
         }
     }
-    
+
     lazy var viewModel: CalculatorViewModelProtocol = {
         var model = CalculatorViewModel()
         model.reloadData = { [weak self] in
@@ -28,14 +28,14 @@ class CalculatorViewController: BaseViewController {
         }
         return model
     }()
-    
+
     // MARK: - Live cycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
     }
-    
+
     func setupTableView() {
         tableView.backgroundColor = Theme.whiteDirtyLight
         tableView.dataSource = self
@@ -56,11 +56,11 @@ class CalculatorViewController: BaseViewController {
 // MARK: - UITableViewDataSource, UITableViewDelegate
 
 extension CalculatorViewController: UITableViewDataSource, UITableViewDelegate {
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.sections.count
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch viewModel.sections[section] {
         case .paymentInput(let cells):
@@ -69,7 +69,7 @@ extension CalculatorViewController: UITableViewDataSource, UITableViewDelegate {
             return cells.count
         }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch viewModel.sections[indexPath.section] {
         case .paymentInput(let cells):
@@ -101,14 +101,14 @@ extension CalculatorViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return UITableViewCell()
     }
-    
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionType = viewModel.sections[section]
         guard sectionType.isContainsHeader else { return nil }
         let header = tableView.dequeueReusableHeaderFooterView(PaymentSchemeSectionView.self)
         return header
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let sectionType = viewModel.sections[section]
         guard sectionType.isContainsHeader else { return 0.0 }
@@ -131,7 +131,7 @@ extension CalculatorViewController: SliderTableViewCellDelegate {
         guard let indexPath = tableView.indexPath(for: sender) else { return }
         viewModel.sliderDidChange(indexPath, value)
     }
-    
+
     func sliderDidStopped(_ sender: UITableViewCell, _ value: Float) {
         guard let indexPath = tableView.indexPath(for: sender) else { return }
         viewModel.sliderDidStopped(indexPath, value)
@@ -145,7 +145,7 @@ extension CalculatorViewController: SliderEditableTableViewCellDelegate {
         guard let indexPath = tableView.indexPath(for: sender) else { return }
         viewModel.rightValueDidEntered(indexPath, value)
     }
-    
+
     func leftValueDidChanged(_ sender: UITableViewCell, _ value: Float) {
         guard let indexPath = tableView.indexPath(for: sender) else { return }
         viewModel.leftValueDidEntered(indexPath, value)

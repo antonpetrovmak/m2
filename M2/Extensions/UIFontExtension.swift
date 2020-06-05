@@ -9,38 +9,38 @@
 import UIKit
 
 extension UIFont {
-    
+
     enum BaseFamily {
-        
+
         private static let baseFamilyName = "Sarabun"
-        
+
         private static func font(_ style: String, _ size: CGFloat) -> UIFont {
             return UIFont(name: "\(baseFamilyName)-\(style)", size: size)!
         }
-        
+
         static func Regular(_ size: CGFloat) -> UIFont {
             return font("Regular", size)
         }
-        
+
         static func Bold(_ size: CGFloat) -> UIFont {
             return font("Bold", size)
         }
-        
+
         static func Light(_ size: CGFloat) -> UIFont {
             return font("Light", size)
         }
-        
+
         static func Medium(_ size: CGFloat) -> UIFont {
             return font("Medium", size)
         }
-        
+
         static func SemiBold(_ size: CGFloat) -> UIFont {
             return font("SemiBold", size)
         }
-        
+
         static func Italic(_ size: CGFloat) -> UIFont {
             return font("Italic", size)
         }
     }
-    
+
 }

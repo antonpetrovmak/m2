@@ -9,54 +9,54 @@
 import Foundation
 
 public class ApartmentsSchemeBuilder: CreditDataStoreProtocol {
-    
+
     private(set) var currency: CurrencyProtocol = Currency()
-    
+
     private(set) var apartmentArea: Double = 62.0
     private(set) var costOfOneQquareMeter: Double = 1500
-    
+
     private(set) var initialFee: Double = 16740
     private(set) var initialFeePercent: Double = 0.30
-    
+
     private(set) var creditPercent: Double = 0.18
     private(set) var creditTerm: Int = 12
-    
+
     private(set) var creditType: CreditType = .standard
-    
+
     // MARK: - Functions
-    
+
     func setApartmentArea(_ area: Double) {
         apartmentArea = limitations.apartmentArea.around(value: area)
         setInitialFee(initialFee)
     }
-    
+
     func setCostOfOneQquareMeter(_ cost: Double) {
         costOfOneQquareMeter = limitations.costOfOneQquareMeter.around(value: cost)
         setInitialFee(initialFee)
     }
-    
+
     func setInitialFee(_ initialFee: Double) {
         self.initialFee = limitations.initialFee.around(value: initialFee)
         self.initialFeePercent = initialFee == 0 ? 0 : (initialFee / apartmentCost)
     }
-    
+
     func setInitialFeePercent(_ initialFeePercent: Double) {
         self.initialFeePercent = initialFeePercent
         self.initialFee = apartmentCost * initialFeePercent
     }
-    
+
     func setCurrency(_ currency: CurrencyProtocol) {
         self.currency = currency
     }
-    
+
     func setCreditType(_ creditType: CreditType) {
         self.creditType = creditType
     }
-    
+
     func setCreditPercent(_ creditPercent: Double) {
         self.creditPercent = limitations.creditPercent.around(value: creditPercent)
     }
-    
+
     func setCreditTerm(_ creditTerm: Int) {
         self.creditTerm = creditTerm
     }
@@ -68,25 +68,25 @@ extension ApartmentsSchemeBuilder {
     var creditBody: Double {
         return apartmentCost - initialFee
     }
-    
+
     private var apartmentCost: Double {
         return apartmentArea * costOfOneQquareMeter
     }
-    
+
     private var payments: [OnePaymentModel] {
         return creditType.method.calculate(self)
     }
-    
+
     private var limitations: Limitations {
         var limits = Limitations()
-        
+
         let maxInitialFee = apartmentCost * 0.9
         let initialFeeStep = getInitialFeeStep(maxInitialFee)
         limits.initialFee.step = initialFeeStep
         limits.initialFee.max = (maxInitialFee / initialFeeStep) * initialFeeStep
         return limits
     }
-    
+
     func getInitialFeeStep(_ apartmentCost: Double) -> Double {
         switch apartmentCost {
         case 0...100: return 10

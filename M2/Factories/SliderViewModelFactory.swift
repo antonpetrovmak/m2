@@ -17,13 +17,13 @@ enum SliderType: Int {
 }
 
 struct SliderViewModelFactory {
-    
+
     func makeSliderType(by index: Int) -> SliderType? {
-        return SliderType.init(rawValue: index)
+        return SliderType(rawValue: index)
     }
-    
+
     func makeSlidersViewModels(_ model: ApartmentsScheme) -> [SliderTableViewCellViewModel] {
-        
+
         let apartmentArea = SliderTableViewCellViewModel(
             minimumValue: Float(model.limitations.apartmentArea.min),
             maximumValue: Float(model.limitations.apartmentArea.max),
@@ -32,7 +32,7 @@ struct SliderViewModelFactory {
             title: "title_apartment_area".localized,
             rigthFormatter: ApartmentAreaFormatter(),
             leftFormatter: nil)
-        
+
         let costOfOneQquareMeter = SliderTableViewCellViewModel(
             minimumValue: Float(model.limitations.costOfOneQquareMeter.min),
             maximumValue: Float(model.limitations.costOfOneQquareMeter.max),
@@ -41,7 +41,7 @@ struct SliderViewModelFactory {
             title: "title_cost_per_square_meter".localized,
             rigthFormatter: CostOfOneQquareMeterFormatter(),
             leftFormatter: nil)
-        
+
         let initialFee = SliderTableViewCellViewModel(
             minimumValue: Float(model.limitations.initialFee.min),
             maximumValue: Float(model.limitations.initialFee.max),
@@ -50,7 +50,7 @@ struct SliderViewModelFactory {
             title: "title_initial_fee".localized,
             rigthFormatter: InitialFeeFormatter(),
             leftFormatter: InitialFeePercentFormatter(fullAmount: model.apartmentCost))
-        
+
         let creditTerm = SliderTableViewCellViewModel(
             minimumValue: Float(model.limitations.creditTerm.min),
             maximumValue: Float(model.limitations.creditTerm.max),
@@ -59,7 +59,7 @@ struct SliderViewModelFactory {
             title: "title_loan_terms".localized,
             rigthFormatter: CreditTermFormatter(),
             leftFormatter: CreditTermMonthFormatter())
-        
+
         let creditPercent = SliderTableViewCellViewModel(
             minimumValue: Float(model.limitations.creditPercent.min),
             maximumValue: Float(model.limitations.creditPercent.max),
@@ -68,7 +68,7 @@ struct SliderViewModelFactory {
             title: "title_interest_rate".localized,
             rigthFormatter: CreditPercentFormatter(),
             leftFormatter: nil)
-        
+
         return [apartmentArea, costOfOneQquareMeter, initialFee, creditTerm, creditPercent]
     }
 }

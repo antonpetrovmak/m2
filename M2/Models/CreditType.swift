@@ -1,4 +1,3 @@
-
 //
 //  CreditType.swift
 //  M2
@@ -10,16 +9,16 @@
 import Foundation
 
 enum CreditType: Int {
-    case standard   = 0
-    case annuity    = 1
-    
+    case standard = 0
+    case annuity = 1
+
     var localizedString: String {
         switch self {
         case .standard: return "standard".localized
         case .annuity: return "annuity".localized
         }
     }
-    
+
     var method: CreditMethodProtocol {
         switch self {
         case .standard: return StandardMethod()

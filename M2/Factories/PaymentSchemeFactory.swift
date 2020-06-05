@@ -9,7 +9,7 @@
 import Foundation
 
 struct PaymentSchemeFactory {
-    
+
     func makePaymentSchemeCellViewModel(_ model: OnePaymentModel) -> PaymentSchemeCellViewModel {
         let year: String? = (Int(model.date.stringDate(format: "MM")) == 1) ? model.date.stringDate(format: "yyyy") : nil
         return PaymentSchemeCellViewModel(
