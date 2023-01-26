@@ -360,7 +360,6 @@
 				2B596D032382F6F600C2A435 /* Models */,
 				2B0E7E832381A85E0022E407 /* Cell */,
 				2BE8F01E238459B7005A3774 /* Modules */,
-				2BE8F01F238459C3005A3774 /* Views */,
 				2BE8F020238459D5005A3774 /* Storyboards */,
 				2BB9BF8D23816B4500C5B4D4 /* Info.plist */,
 				2B9710FA23AAD1FC003DB0FA /* GoogleService-Info.plist */,
@@ -426,13 +425,6 @@
 				2B904CB323C2459C0092A626 /* BaseViewController.swift */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		2BE8F01F238459C3005A3774 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		2BE8F020238459D5005A3774 /* Storyboards */ = {
@@ -823,7 +815,7 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "DEBUG=1";
 				INFOPLIST_FILE = M2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -853,7 +845,7 @@
 				);
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "DEBUG=0";
 				INFOPLIST_FILE = M2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
